@@ -30,8 +30,12 @@ const app = {
         tbody.innerHTML = '';
         
         this.students.forEach(s => {
-            const numLangs = s.ngoaiNgu ? s.ngoaiNgu.length : 0;
-            const numSubjects = s.monHoc ? s.monHoc.length : 0;
+            let totalCredits = 0;
+            if (s.monHoc) {
+                totalCredits = s.monHoc
+                    .filter(m => m.danhGia === 'Đạt' || m.DanhGia === 'Đạt')
+                    .reduce((sum, m) => sum + (m.stc || m.STC || 0), 0);
+            }
             
             const tr = document.createElement('tr');
             tr.innerHTML = `
@@ -40,8 +44,7 @@ const app = {
                 <td><span class="badge secondary">${s.maLop}</span></td>
                 <td>${s.phai || ''}</td>
                 <td>
-                    <span class="badge">${numLangs} Ngoại ngữ</span>
-                    <span class="badge">${numSubjects} Môn học</span>
+                    <span class="badge">${totalCredits} Tín chỉ</span>
                 </td>
                 <td>
                     <button class="btn-icon" onclick="app.editStudent('${s.maSV}')" title="Sửa / Chi tiết">
@@ -106,6 +109,8 @@ const app = {
         document.getElementById('tuoi').value = student.tuoi || '';
         document.getElementById('khoa').value = student.khoa || '';
         document.getElementById('namhoc').value = student.namHoc || '';
+        document.getElementById('email').value = student.email || student.Email || '';
+        document.getElementById('sdt').value = student.sdt || student.SDT || '';
 
         // Render languages
         const langContainer = document.getElementById('languagesContainer');
@@ -162,6 +167,14 @@ const app = {
         const container = document.getElementById('subjectsContainer');
         const div = document.createElement('div');
         div.className = 'dynamic-row subject-row';
+        
+        let badgeHtml = '';
+        const danhGia = data.danhGia || data.DanhGia;
+        if (danhGia) {
+            const badgeClass = danhGia === 'Đạt' ? 'badge-dat' : 'badge-khongdat';
+            badgeHtml = `<span class="badge-danhgia ${badgeClass}">${danhGia}</span>`;
+        }
+        
         div.innerHTML = `
             <div class="form-group">
                 <label>Mã môn</label>
@@ -172,7 +185,11 @@ const app = {
                 <input type="text" class="s-ten" value="${data.tenMon || ''}" required>
             </div>
             <div class="form-group">
-                <label>Điểm</label>
+                <label>Số TC</label>
+                <input type="number" min="1" class="s-stc" value="${data.stc !== undefined ? data.stc : data.STC || ''}" required>
+            </div>
+            <div class="form-group">
+                <label>Điểm ${badgeHtml}</label>
                 <input type="number" step="0.1" min="0" max="10" class="s-diem" value="${data.diem !== undefined ? data.diem : ''}" required>
             </div>
             <button type="button" class="btn-icon delete" onclick="this.parentElement.remove()">
@@ -204,6 +221,8 @@ const app = {
             tuoi: parseInt(document.getElementById('tuoi').value) || 0,
             khoa: document.getElementById('khoa').value.trim(),
             namHoc: document.getElementById('namhoc').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            sdt: document.getElementById('sdt').value.trim(),
             ngoaiNgu: [],
             monHoc: []
         };
@@ -223,6 +242,7 @@ const app = {
             dto.monHoc.push({
                 maMon: row.querySelector('.s-ma').value.trim(),
                 tenMon: row.querySelector('.s-ten').value.trim(),
+                stc: parseInt(row.querySelector('.s-stc').value) || 0,
                 diem: parseFloat(row.querySelector('.s-diem').value) || 0
             });
         });

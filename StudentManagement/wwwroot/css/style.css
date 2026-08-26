@@ -316,7 +316,7 @@ body {
 .modal {
     background-color: var(--card-bg);
     width: 100%;
-    max-width: 810px;
+    max-width: 830px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     display: flex;
@@ -423,9 +423,28 @@ body {
 
 .dynamic-row.subject-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr auto;
+    grid-template-columns: 1fr 2fr 80px 1.2fr auto;
     gap: 12px;
     align-items: end;
+}
+
+.badge-danhgia {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-dat {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.badge-khongdat {
+    background-color: #fee2e2;
+    color: #dc2626;
 }
 
 .dynamic-row.lang-row {

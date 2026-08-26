@@ -58,6 +58,8 @@ namespace StudentManagement.Repositories
             if (updateDto.NamHoc != null) updates.Add(updateDefinitionBuilder.Set(s => s.NamHoc, updateDto.NamHoc));
             if (updateDto.Khoa != null) updates.Add(updateDefinitionBuilder.Set(s => s.Khoa, updateDto.Khoa));
             if (updateDto.MaLop != null) updates.Add(updateDefinitionBuilder.Set(s => s.MaLop, updateDto.MaLop));
+            if (updateDto.Email != null) updates.Add(updateDefinitionBuilder.Set(s => s.Email, updateDto.Email));
+            if (updateDto.SDT != null) updates.Add(updateDefinitionBuilder.Set(s => s.SDT, updateDto.SDT));
 
             if (updates.Count > 0)
             {
@@ -114,7 +116,9 @@ namespace StudentManagement.Repositories
             );
 
             // Positional operator $
-            var update = Builders<Student>.Update.Set("monhoc.$.diem", score);
+            var update = Builders<Student>.Update
+                .Set("monhoc.$.diem", score)
+                .Set("monhoc.$.danhgia", score > 4 ? "Đạt" : "Không đạt");
             
             var result = await _students.UpdateOneAsync(filter, update);
             if (result.MatchedCount == 0)

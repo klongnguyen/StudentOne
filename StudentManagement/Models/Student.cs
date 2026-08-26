@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace StudentManagement.Models
 {
+    [BsonIgnoreExtraElements]
     public class Student
     {
         [BsonId]
@@ -25,10 +26,16 @@ namespace StudentManagement.Models
         public string NamHoc { get; set; } = null!;
 
         [BsonElement("khoa")]
-        public string Khoa { get; set; } = null!;
+        public string Khoa { get; set; } = string.Empty;
 
         [BsonElement("malop")]
         public string MaLop { get; set; } = null!;
+
+        [BsonElement("email")]
+        public string Email { get; set; } = string.Empty;
+
+        [BsonElement("sdt")]
+        public string SDT { get; set; } = string.Empty;
 
         [BsonElement("ngoaingu")]
         public List<Language> NgoaiNgu { get; set; } = new List<Language>();
@@ -37,6 +44,7 @@ namespace StudentManagement.Models
         public List<Subject> MonHoc { get; set; } = new List<Subject>();
     }
 
+    [BsonIgnoreExtraElements]
     public class Language
     {
         [BsonElement("tenNgoaiNgu")]
@@ -52,6 +60,7 @@ namespace StudentManagement.Models
         public string GhiChu { get; set; } = string.Empty;
     }
 
+    [BsonIgnoreExtraElements]
     public class Subject
     {
         [BsonElement("mamon")]
@@ -62,5 +71,11 @@ namespace StudentManagement.Models
 
         [BsonElement("diem")]
         public double Diem { get; set; }
+
+        [BsonElement("stc")]
+        public int STC { get; set; }
+
+        [BsonElement("danhgia")]
+        public string DanhGia { get; set; } = string.Empty;
     }
 }

@@ -35,7 +35,7 @@ namespace StudentManagement.Services
 
         public async Task CreateAsync(StudentCreateDto dto)
         {
-            ValidateStudent(dto.MaSV, dto.HoTen, dto.Tuoi, dto.Phai, dto.MaLop);
+            ValidateStudent(dto.MaSV, dto.HoTen, dto.Tuoi, dto.Phai, dto.MaLop, dto.Email, dto.SDT);
 
             var student = new Student
             {
@@ -46,6 +46,8 @@ namespace StudentManagement.Services
                 NamHoc = dto.NamHoc ?? "",
                 Khoa = dto.Khoa ?? "",
                 MaLop = dto.MaLop,
+                Email = dto.Email ?? "",
+                SDT = dto.SDT ?? "",
                 NgoaiNgu = new List<Language>(),
                 MonHoc = new List<Subject>()
             };
@@ -75,12 +77,15 @@ namespace StudentManagement.Services
                     }
                     seenMamon.Add(mh.MaMon);
                     ValidateScore(mh.Diem);
+                    if (mh.STC <= 0) throw new ValidationException($"Số tín chỉ của môn '{mh.MaMon}' phải lớn hơn 0.");
                     
                     student.MonHoc.Add(new Subject
                     {
                         MaMon = mh.MaMon,
                         TenMon = mh.TenMon,
-                        Diem = mh.Diem
+                        Diem = mh.Diem,
+                        STC = mh.STC,
+                        DanhGia = mh.Diem > 4 ? "Đạt" : "Không đạt"
                     });
                 }
             }
@@ -140,12 +145,15 @@ namespace StudentManagement.Services
         public async Task AddSubjectAsync(string masv, SubjectDto dto)
         {
             ValidateScore(dto.Diem);
+            if (dto.STC <= 0) throw new ValidationException("Số tín chỉ phải lớn hơn 0.");
             
             var subject = new Subject
             {
                 MaMon = dto.MaMon,
                 TenMon = dto.TenMon,
-                Diem = dto.Diem
+                Diem = dto.Diem,
+                STC = dto.STC,
+                DanhGia = dto.Diem > 4 ? "Đạt" : "Không đạt"
             };
             await _repository.AddSubjectAsync(masv, subject);
         }
@@ -158,7 +166,7 @@ namespace StudentManagement.Services
 
         public async Task ReplaceStudentAsync(string masv, StudentCreateDto dto)
         {
-            ValidateStudent(dto.MaSV, dto.HoTen, dto.Tuoi, dto.Phai, dto.MaLop);
+            ValidateStudent(dto.MaSV, dto.HoTen, dto.Tuoi, dto.Phai, dto.MaLop, dto.Email, dto.SDT);
 
             var existing = await GetByMaSVAsync(masv);
 
@@ -172,6 +180,8 @@ namespace StudentManagement.Services
                 NamHoc = dto.NamHoc ?? "",
                 Khoa = dto.Khoa ?? "",
                 MaLop = dto.MaLop,
+                Email = dto.Email ?? "",
+                SDT = dto.SDT ?? "",
                 NgoaiNgu = dto.NgoaiNgu?.Select(nn => new Language
                 {
                     TenNgoaiNgu = nn.TenNgoaiNgu,
@@ -182,11 +192,14 @@ namespace StudentManagement.Services
                 MonHoc = dto.MonHoc?.Select(mh => 
                 {
                     ValidateScore(mh.Diem);
+                    if (mh.STC <= 0) throw new ValidationException($"Số tín chỉ của môn '{mh.MaMon}' phải lớn hơn 0.");
                     return new Subject
                     {
                         MaMon = mh.MaMon,
                         TenMon = mh.TenMon,
-                        Diem = mh.Diem
+                        Diem = mh.Diem,
+                        STC = mh.STC,
+                        DanhGia = mh.Diem > 4 ? "Đạt" : "Không đạt"
                     };
                 }).ToList() ?? new List<Subject>()
             };
@@ -194,13 +207,23 @@ namespace StudentManagement.Services
             await _repository.ReplaceStudentAsync(existing.Id, student);
         }
 
-        private void ValidateStudent(string masv, string hoten, int tuoi, string phai, string malop)
+        private void ValidateStudent(string masv, string hoten, int tuoi, string phai, string malop, string? email, string? sdt)
         {
             if (string.IsNullOrWhiteSpace(masv)) throw new ValidationException("Mã sinh viên bắt buộc.");
             if (string.IsNullOrWhiteSpace(hoten)) throw new ValidationException("Họ tên không được để trống.");
             if (string.IsNullOrWhiteSpace(malop)) throw new ValidationException("Mã lớp không được để trống.");
             if (tuoi <= 0) throw new ValidationException("Tuổi phải là số nguyên dương lớn hơn 0.");
             if (phai != "Nam" && phai != "Nữ") throw new ValidationException("Phái chỉ nhận giá trị 'Nam' hoặc 'Nữ'.");
+            
+            if (!string.IsNullOrWhiteSpace(email) && !email.Contains("@"))
+                throw new ValidationException("Email không đúng định dạng (phải chứa ký tự '@').");
+            
+            if (!string.IsNullOrWhiteSpace(sdt))
+            {
+                if (!sdt.StartsWith("0")) throw new ValidationException("Số điện thoại phải bắt đầu bằng '0'.");
+                if (sdt.Length < 10 || sdt.Length > 11) throw new ValidationException("Số điện thoại phải có 10 hoặc 11 chữ số.");
+                if (!sdt.All(char.IsDigit)) throw new ValidationException("Số điện thoại chỉ được chứa các chữ số.");
+            }
         }
 
         private void ValidateScore(double score)

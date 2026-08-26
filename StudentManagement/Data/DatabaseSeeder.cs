@@ -37,14 +37,28 @@ namespace StudentManagement.Data
                         NamHoc = "2023-2027",
                         Khoa = "Công nghệ thông tin",
                         MaLop = $"14DHTH{(i % 2) + 1:D2}", // 14DHTH01 hoặc 14DHTH02
+                        Email = $"sinhvien{i}@gmail.com",
+                        SDT = $"090{i:D7}",
                         NgoaiNgu = new List<Language>
                         {
                             new Language { TenNgoaiNgu = "Tiếng Anh", TrinhDo = "B1", CertLink = $"https://example.com/cert/{maSV}-en", GhiChu = "" }
                         },
                         MonHoc = new List<Subject>
                         {
-                            new Subject { MaMon = "csdl", TenMon = "Cơ sở dữ liệu", Diem = 5.0 + (i % 6) },
-                            new Subject { MaMon = "laptrinh", TenMon = "Lập trình Cơ bản", Diem = 6.0 + (i % 4) }
+                            new Subject { 
+                                MaMon = "csdl", 
+                                TenMon = "Cơ sở dữ liệu", 
+                                Diem = 5.0 + (i % 6),
+                                STC = 3,
+                                DanhGia = (5.0 + (i % 6)) > 4 ? "Đạt" : "Không đạt"
+                            },
+                            new Subject { 
+                                MaMon = "laptrinh", 
+                                TenMon = "Lập trình Cơ bản", 
+                                Diem = 6.0 + (i % 4),
+                                STC = 2,
+                                DanhGia = (6.0 + (i % 4)) > 4 ? "Đạt" : "Không đạt"
+                            }
                         }
                     });
                 }

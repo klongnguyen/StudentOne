@@ -11,6 +11,8 @@ namespace StudentManagement.DTOs
         public string NamHoc { get; set; } = null!;
         public string Khoa { get; set; } = null!;
         public string MaLop { get; set; } = null!;
+        public string Email { get; set; } = string.Empty;
+        public string SDT { get; set; } = string.Empty;
         public List<LanguageDto>? NgoaiNgu { get; set; }
         public List<SubjectDto>? MonHoc { get; set; }
     }
@@ -23,6 +25,8 @@ namespace StudentManagement.DTOs
         public string? NamHoc { get; set; }
         public string? Khoa { get; set; }
         public string? MaLop { get; set; }
+        public string? Email { get; set; }
+        public string? SDT { get; set; }
     }
 
     public class LanguageDto
@@ -38,5 +42,7 @@ namespace StudentManagement.DTOs
         public string MaMon { get; set; } = null!;
         public string TenMon { get; set; } = null!;
         public double Diem { get; set; }
+        public int STC { get; set; }
+        public string DanhGia { get; set; } = string.Empty;
     }
 }
