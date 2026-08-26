@@ -14,11 +14,8 @@ builder.Services.AddSingleton<MongoDbContext>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-// (Tùy chọn) Thêm Swagger UI (yêu cầu package Swashbuckle.AspNetCore nếu dùng .NET 8 trở xuống, 
-// nhưng trong .NET 9 thì OpenAPI thay thế, tuy nhiên ta cứ để mặc định hoặc cài thêm swagger UI sau nếu cần)
 
 var app = builder.Build();
 
@@ -28,6 +25,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     // app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "StudentManagement API"));
 }
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
