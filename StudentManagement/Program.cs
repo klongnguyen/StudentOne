@@ -1,4 +1,6 @@
 using StudentManagement.Data;
+using StudentManagement.Repositories;
+using StudentManagement.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,10 @@ builder.Services.AddControllers();
 
 // Đăng ký MongoDbContext dạng Singleton
 builder.Services.AddSingleton<MongoDbContext>();
+
+// Đăng ký Repositories và Services
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
