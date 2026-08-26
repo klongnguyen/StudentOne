@@ -133,25 +133,27 @@ const app = {
         const div = document.createElement('div');
         div.className = 'dynamic-row lang-row';
         div.innerHTML = `
-            <div class="form-group">
-                <label>Ngoại ngữ</label>
-                <input type="text" class="l-ten" value="${data.tenNgoaiNgu || ''}" required>
+            <div class="row-top">
+                <div class="form-group">
+                    <label>Ngoại ngữ</label>
+                    <input type="text" class="l-ten" value="${data.tenNgoaiNgu || ''}" required>
+                </div>
+                <div class="form-group">
+                    <label>Trình độ</label>
+                    <input type="text" class="l-trinhdo" value="${data.trinhDo || ''}" required>
+                </div>
+                <div class="form-group">
+                    <label>Chứng chỉ (Link)</label>
+                    <input type="text" class="l-link" value="${data.certLink || ''}">
+                </div>
+                <button type="button" class="btn-icon delete" onclick="this.closest('.dynamic-row').remove()">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
             </div>
-            <div class="form-group">
-                <label>Trình độ</label>
-                <input type="text" class="l-trinhdo" value="${data.trinhDo || ''}" required>
-            </div>
-            <div class="form-group">
-                <label>Chứng chỉ (Link)</label>
-                <input type="text" class="l-link" value="${data.certLink || ''}">
-            </div>
-            <div class="form-group">
+            <div class="row-bottom form-group">
                 <label>Ghi chú</label>
                 <input type="text" class="l-ghichu" value="${data.ghiChu || ''}">
             </div>
-            <button type="button" class="btn-icon delete" onclick="this.parentElement.remove()">
-                <i class="fa-solid fa-trash"></i>
-            </button>
         `;
         container.appendChild(div);
     },

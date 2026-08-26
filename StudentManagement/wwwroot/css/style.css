@@ -316,7 +316,7 @@ body {
 .modal {
     background-color: var(--card-bg);
     width: 100%;
-    max-width: 800px;
+    max-width: 810px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     display: flex;
@@ -414,17 +414,32 @@ body {
 
 /* Dynamic Rows */
 .dynamic-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr auto;
-    gap: 12px;
-    margin-bottom: 12px;
-    align-items: end;
     background: #f8fafc;
     padding: 12px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
+    margin-bottom: 12px;
 }
 
 .dynamic-row.subject-row {
+    display: grid;
     grid-template-columns: 1fr 2fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.dynamic-row.lang-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.dynamic-row.lang-row .row-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.dynamic-row.lang-row .row-bottom {
+    margin-top: 12px;
 }
