@@ -11,14 +11,11 @@ Dự án này là một hệ thống quản lý sinh viên được xây dựng 
 * **Auto Indexing & Seeding**: Tự động tạo `Unique Index` (Mã SV) và `Compound Index` (Mã Lớp + Họ Tên) cùng với việc nhồi sẵn (seed) 20 dữ liệu mẫu ngay lần chạy đầu tiên.
 
 ## 📸 Giao diện Ứng dụng
-
-
-
+## 📸 Giao diện Ứng dụng
 ### 1. Quản lý Sinh viên
-![Danh sách Sinh viên](StudentManagement/docs/images/student_list.png)
-
+<img src="StudentManagement/docs/images/student_list.png" width="100%" alt="Danh sách Sinh viên">
 ### 2. Dashboard Thống Kê
-![Dashboard Giao Diện](StudentManagement/docs/images/dashboard.png)
+<img src="StudentManagement/docs/images/dashboard.png" width="100%" alt="Dashboard Giao Diện">
 ---
 
 ## 🛠 Hướng dẫn Cài đặt & Chạy ứng dụng
