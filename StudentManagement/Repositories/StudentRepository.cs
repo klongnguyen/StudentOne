@@ -315,7 +315,7 @@ namespace StudentManagement.Repositories
             {
                 if (r["_id"].IsNumeric)
                 {
-                    double bound = r["_id"].AsDouble;
+                    double bound = r["_id"].ToDouble();
                     if (bound == 0) list[0].Count = r["Count"].AsInt32;
                     else if (bound == 5.5) list[1].Count = r["Count"].AsInt32;
                     else if (bound == 7.0) list[2].Count = r["Count"].AsInt32;

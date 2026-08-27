@@ -47,10 +47,20 @@
                 <div id="studentsView" class="card table-card">
                     <div class="card-header">
                         <h3>Danh sách Sinh viên</h3>
-                        <div class="header-actions">
+                        <div class="header-actions" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                            <div class="search-options" style="display: flex; gap: 8px;">
+                                <select id="filterClass" style="padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; min-width: 120px;">
+                                    <option value="all">Tất cả Lớp</option>
+                                </select>
+                                <select id="filterGender" style="padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; min-width: 120px;">
+                                    <option value="all">Tất cả Giới tính</option>
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
+                                </select>
+                            </div>
                             <div class="search-box">
                                 <i class="fa-solid fa-search"></i>
-                                <input type="text" id="searchInput" placeholder="Lọc theo mã lớp...">
+                                <input type="text" id="searchInput" placeholder="Tìm theo Mã SV hoặc Tên...">
                             </div>
                             <button class="btn btn-primary" onclick="app.openForm()">
                                 <i class="fa-solid fa-plus"></i> Thêm Sinh viên
@@ -62,11 +72,11 @@
                         <table class="table" id="studentTable">
                             <thead>
                                 <tr>
-                                    <th>Mã SV</th>
-                                    <th>Họ Tên</th>
-                                    <th>Lớp</th>
+                                    <th onclick="app.sortData('maSV')" style="cursor: pointer;">Mã SV <i class="fa-solid fa-sort" style="color: #cbd5e1; margin-left: 4px;"></i></th>
+                                    <th onclick="app.sortData('hoTen')" style="cursor: pointer;">Họ Tên <i class="fa-solid fa-sort" style="color: #cbd5e1; margin-left: 4px;"></i></th>
+                                    <th onclick="app.sortData('maLop')" style="cursor: pointer;">Lớp <i class="fa-solid fa-sort" style="color: #cbd5e1; margin-left: 4px;"></i></th>
                                     <th>Phái</th>
-                                    <th>Tín chỉ tích lũy</th>
+                                    <th onclick="app.sortData('totalCredits')" style="cursor: pointer;">Tín chỉ <i class="fa-solid fa-sort" style="color: #cbd5e1; margin-left: 4px;"></i></th>
                                     <th>Hành động</th>
                                 </tr>
                             </thead>
@@ -162,17 +172,9 @@
                             </div>
                         </div>
                         <div class="card dashboard-card">
-                            <div class="card-header"><h3>Bảng Phân loại Học lực</h3></div>
-                            <div class="table-responsive">
-                                <table class="table" id="classificationTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Xếp loại</th>
-                                            <th>Số lượng Sinh viên</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
+                            <div class="card-header"><h3>Biểu đồ Phân loại Học lực</h3></div>
+                            <div class="chart-container">
+                                <canvas id="classificationChart"></canvas>
                             </div>
                         </div>
                     </div>
