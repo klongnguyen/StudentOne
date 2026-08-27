@@ -9,6 +9,8 @@ const app = {
     isEditMode: false,
     currentSortCol: '',
     isAscending: true,
+    currentPage: 1,
+    pageSize: 25,
     
     init: function() {
         this.loadStudents();
@@ -85,7 +87,16 @@ const app = {
         const tbody = document.querySelector('#studentTable tbody');
         tbody.innerHTML = '';
         
-        this.students.forEach(s => {
+        // Paging logic
+        const totalItems = this.students.length;
+        const totalPages = Math.ceil(totalItems / this.pageSize);
+        if (this.currentPage > totalPages && totalPages > 0) this.currentPage = totalPages;
+        
+        const startIndex = (this.currentPage - 1) * this.pageSize;
+        const endIndex = Math.min(startIndex + this.pageSize, totalItems);
+        const pageData = this.students.slice(startIndex, endIndex);
+
+        pageData.forEach(s => {
             const totalCredits = s.totalCredits || 0;
             
             const tr = document.createElement('tr');
@@ -108,6 +119,35 @@ const app = {
             `;
             tbody.appendChild(tr);
         });
+
+        // Update Pagination UI
+        const pageInfo = document.getElementById('pageInfo');
+        if (pageInfo) {
+            if (totalItems === 0) {
+                pageInfo.innerText = 'Không tìm thấy sinh viên nào';
+            } else {
+                pageInfo.innerText = `Đang hiển thị ${startIndex + 1} đến ${endIndex} trong số ${totalItems} sinh viên`;
+            }
+        }
+        const pageNumbers = document.getElementById('pageNumbers');
+        if (pageNumbers) {
+            pageNumbers.innerText = `Trang ${this.currentPage} / ${totalPages > 0 ? totalPages : 1}`;
+        }
+    },
+
+    prevPage: function() {
+        if (this.currentPage > 1) {
+            this.currentPage--;
+            this.renderTable();
+        }
+    },
+    
+    nextPage: function() {
+        const totalPages = Math.ceil(this.students.length / this.pageSize);
+        if (this.currentPage < totalPages) {
+            this.currentPage++;
+            this.renderTable();
+        }
     },
 
     setupSearch: function() {
@@ -218,6 +258,7 @@ const app = {
             });
         }
 
+        this.currentPage = 1; // Reset to page 1 after filter/sort
         this.renderTable();
     },
 
@@ -452,6 +493,86 @@ const app = {
         });
     },
 
+    closeChartModal: function() {
+        document.getElementById('chartDetailsModal').classList.remove('active');
+    },
+
+    showLanguageDetails: function(language) {
+        document.getElementById('chartModalTitle').innerText = `Sinh viên học ngoại ngữ: ${language}`;
+        document.getElementById('chartDetailsHeaders').innerHTML = `
+            <th>STT</th>
+            <th>Mã SV</th>
+            <th>Tên SV</th>
+            <th>Lớp</th>
+            <th>Trình độ</th>
+        `;
+        const tbody = document.querySelector('#chartDetailsTable tbody');
+        tbody.innerHTML = '';
+        
+        let stt = 1;
+        this.allStudents.forEach(s => {
+            const langObj = (s.ngoaiNgu || []).find(n => n.tenNgoaiNgu === language);
+            if (langObj) {
+                const nameParts = this.extractNameParts(s.hoTen);
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${stt++}</td>
+                        <td><strong>${s.maSV}</strong></td>
+                        <td>${nameParts.firstName}</td>
+                        <td><span class="badge secondary">${s.maLop}</span></td>
+                        <td><span class="badge">${langObj.trinhDo}</span></td>
+                    </tr>
+                `;
+            }
+        });
+        document.getElementById('chartDetailsModal').classList.add('active');
+    },
+
+    showClassificationDetails: function(classification) {
+        document.getElementById('chartModalTitle').innerText = `Sinh viên đạt loại: ${classification}`;
+        document.getElementById('chartDetailsHeaders').innerHTML = `
+            <th>STT</th>
+            <th>Mã SV</th>
+            <th>Tên SV</th>
+            <th>Lớp</th>
+            <th>GPA</th>
+        `;
+        const tbody = document.querySelector('#chartDetailsTable tbody');
+        tbody.innerHTML = '';
+        
+        let stt = 1;
+        this.allStudents.forEach(s => {
+            let totalWeighted = 0;
+            let totalCredits = 0;
+            (s.monHoc || []).forEach(mh => {
+                totalWeighted += (mh.diem * mh.stc);
+                totalCredits += mh.stc;
+            });
+            const gpa = totalCredits > 0 ? totalWeighted / totalCredits : 0;
+            
+            let cls = 'Unknown';
+            if (gpa >= 8.5) cls = 'Xuất sắc';
+            else if (gpa >= 7.0) cls = 'Giỏi';
+            else if (gpa >= 5.5) cls = 'Khá';
+            else cls = 'Trung bình/Yếu'; 
+            
+            if (cls === classification) {
+                const nameParts = this.extractNameParts(s.hoTen);
+                const badgeClass = gpa >= 5.5 ? 'badge-dat' : 'badge-khongdat';
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${stt++}</td>
+                        <td><strong>${s.maSV}</strong></td>
+                        <td>${nameParts.firstName}</td>
+                        <td><span class="badge secondary">${s.maLop}</span></td>
+                        <td><span class="badge-danhgia ${badgeClass}">${gpa.toFixed(2)}</span></td>
+                    </tr>
+                `;
+            }
+        });
+        document.getElementById('chartDetailsModal').classList.add('active');
+    },
+
     loadStats: function() {
         // 1. KPI Cards
         fetch(API_URL + '/stats/kpi')
@@ -523,6 +644,13 @@ const app = {
                     },
                     options: {
                         responsive: true,
+                        onClick: (event, elements) => {
+                            if (elements.length > 0) {
+                                const index = elements[0].index;
+                                const classification = data[index].classification;
+                                app.showClassificationDetails(classification);
+                            }
+                        },
                         scales: {
                             y: {
                                 beginAtZero: true,
@@ -552,6 +680,13 @@ const app = {
                     },
                     options: {
                         responsive: true,
+                        onClick: (event, elements) => {
+                            if (elements.length > 0) {
+                                const index = elements[0].index;
+                                const language = data[index].language;
+                                app.showLanguageDetails(language);
+                            }
+                        },
                         scales: {
                             y: {
                                 beginAtZero: true,

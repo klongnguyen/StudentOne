@@ -354,7 +354,8 @@ namespace StudentManagement.Repositories
                         }) 
                     }
                 }),
-                new BsonDocument("$sort", new BsonDocument("GPA", -1))
+                new BsonDocument("$sort", new BsonDocument("GPA", -1)),
+                new BsonDocument("$limit", 5)
             };
 
             var aggregate = await _students.AggregateAsync<StudentGpaDto>(pipeline);

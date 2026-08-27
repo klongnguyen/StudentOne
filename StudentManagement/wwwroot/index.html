@@ -81,9 +81,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Data will be injected here by JS -->
                             </tbody>
                         </table>
+                    </div>
+                    
+                    <!-- Pagination Controls -->
+                    <div class="pagination-container" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border-top: 1px solid var(--border-color); background: #f8fafc; border-radius: 0 0 12px 12px;">
+                        <div id="pageInfo" style="font-size: 0.9rem; color: #64748b;">Đang hiển thị...</div>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <button class="btn btn-sm btn-outline" onclick="app.prevPage()"><i class="fa-solid fa-chevron-left"></i> Trước</button>
+                            <span id="pageNumbers" style="font-weight: 500; font-size: 0.9rem; padding: 0 8px;">Trang 1 / 1</span>
+                            <button class="btn btn-sm btn-outline" onclick="app.nextPage()">Sau <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
                     </div>
                 </div>
 
@@ -262,6 +271,33 @@
             <div class="modal-footer">
                 <button class="btn btn-secondary" onclick="app.closeForm()">Hủy</button>
                 <button class="btn btn-primary" onclick="app.saveStudent()">Lưu thay đổi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Details Modal -->
+    <div class="modal-overlay" id="chartDetailsModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="chartModalTitle">Danh sách Sinh viên</h3>
+                <button class="close-btn" onclick="app.closeChartModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table" id="chartDetailsTable">
+                        <thead>
+                            <tr id="chartDetailsHeaders">
+                                <!-- Headers injected here -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="app.closeChartModal()">Đóng</button>
             </div>
         </div>
     </div>

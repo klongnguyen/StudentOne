@@ -1,0 +1,3347 @@
+[
+  {
+    "masv": "sv001",
+    "hoten": "Nguyễn Văn An",
+    "tuoi": 20,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv001-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv001-jp",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.5
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.8
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.2
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.0
+      }
+    ]
+  },
+  {
+    "masv": "sv002",
+    "hoten": "Trần Thị Bình",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv002-en",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 9.2
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 9.0
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.8
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 9.1
+      }
+    ]
+  },
+  {
+    "masv": "sv003",
+    "hoten": "Lê Hoàng Nam",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv003-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv003-kr",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.5
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.2
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.8
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.0
+      }
+    ]
+  },
+  {
+    "masv": "sv004",
+    "hoten": "Phạm Minh Châu",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv004-en",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.8
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.0
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.5
+      }
+    ]
+  },
+  {
+    "masv": "sv005",
+    "hoten": "Đỗ Quang Huy",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv005-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.8
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.2
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.5
+      }
+    ]
+  },
+  {
+    "masv": "sv006",
+    "hoten": "Võ Thị Mai",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv006-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv006-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.9
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.7
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 9.0
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.8
+      }
+    ]
+  },
+  {
+    "masv": "sv007",
+    "hoten": "Nguyễn Minh Khang",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv007-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.9
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.1
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.6
+      }
+    ]
+  },
+  {
+    "masv": "sv008",
+    "hoten": "Bùi Ngọc Lan",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv008-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.0
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.4
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.1
+      }
+    ]
+  },
+  {
+    "masv": "sv009",
+    "hoten": "Phan Đức Long",
+    "tuoi": 22,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N4",
+        "certLink": "https://example.com/cert/sv009-jp",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv009-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.4
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.8
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.0
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.5
+      }
+    ]
+  },
+  {
+    "masv": "sv010",
+    "hoten": "Trương Thảo Vy",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "ngoaingu": [],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.2
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.8
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.5
+      }
+    ]
+  },
+  {
+    "masv": "sv011",
+    "hoten": "Huỳnh Gia Bảo",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv011-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 9.5
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 9.3
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 9.6
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 9.4
+      }
+    ]
+  },
+  {
+    "masv": "sv012",
+    "hoten": "Đặng Thùy Dương",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv012-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv012-kr",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.2
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.5
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.0
+      }
+    ]
+  },
+  {
+    "masv": "sv013",
+    "hoten": "Lý Thành Đạt",
+    "tuoi": 20,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv013-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.3
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.8
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.5
+      }
+    ]
+  },
+  {
+    "masv": "sv014",
+    "hoten": "Ngô Khánh Linh",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv014-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.9
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.1
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.7
+      }
+    ]
+  },
+  {
+    "masv": "sv015",
+    "hoten": "Trần Quốc Khải",
+    "tuoi": 20,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "ngoaingu": [],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 4.8
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.1
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 4.5
+      }
+    ]
+  },
+  {
+    "masv": "sv016",
+    "hoten": "Nguyễn Phương Thảo",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv016-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv016-jp",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.0
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.4
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.1
+      }
+    ]
+  },
+  {
+    "masv": "sv017",
+    "hoten": "Đinh Văn Phúc",
+    "tuoi": 22,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv017-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.6
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.0
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.3
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.5
+      }
+    ]
+  },
+  {
+    "masv": "sv018",
+    "hoten": "Mai Thị Hương",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv018-en",
+        "ghiChu": "Đang học B1"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.1
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.5
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.0
+      }
+    ]
+  },
+  {
+    "masv": "sv019",
+    "hoten": "Phạm Nhật Minh",
+    "tuoi": 22,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N3",
+        "certLink": "https://example.com/cert/sv019-jp",
+        "ghiChu": "Đang học nâng cao"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv019-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.7
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.3
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.6
+      }
+    ]
+  },
+  {
+    "masv": "sv020",
+    "hoten": "Lâm Ngọc Anh",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv020-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": []
+  }
+{
+    "masv": "sv021",
+    "hoten": "Nguyễn Đức Anh",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien21@gmail.com",
+    "sdt": "0900000021",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv21-jp",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv21-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.1,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv022",
+    "hoten": "Trần Minh Quân",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien22@gmail.com",
+    "sdt": "0900000022",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv22-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.4,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.1,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv023",
+    "hoten": "Lê Gia Hân",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien23@gmail.com",
+    "sdt": "0900000023",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv23-zh",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N4",
+        "certLink": "https://example.com/cert/sv23-jp",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.3,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.5,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.2,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv024",
+    "hoten": "Phạm Tuấn Kiệt",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien24@gmail.com",
+    "sdt": "0900000024",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv24-en",
+        "ghiChu": "Đang học nâng cao"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK II",
+        "certLink": "https://example.com/cert/sv24-kr",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 9.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv025",
+    "hoten": "Hoàng Thùy Linh",
+    "tuoi": 22,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien25@gmail.com",
+    "sdt": "0900000025",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv25-jp",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.5,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.7,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.5,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv026",
+    "hoten": "Võ Minh Đức",
+    "tuoi": 23,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien26@gmail.com",
+    "sdt": "0900000026",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv26-zh",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK II",
+        "certLink": "https://example.com/cert/sv26-kr",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv26-en",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.4,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.4,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv027",
+    "hoten": "Đặng Ngọc Hà",
+    "tuoi": 22,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien27@gmail.com",
+    "sdt": "0900000027",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv27-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.5,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.6,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv028",
+    "hoten": "Bùi Thành Công",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien28@gmail.com",
+    "sdt": "0900000028",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv28-zh",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv28-en",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 9.0,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.7,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv029",
+    "hoten": "Đỗ Khánh Vy",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH01",
+    "email": "sinhvien29@gmail.com",
+    "sdt": "0900000029",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv29-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.9,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 9.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.9,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv030",
+    "hoten": "Phan Hoàng Nam",
+    "tuoi": 22,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien30@gmail.com",
+    "sdt": "0900000030",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv30-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv30-jp",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.7,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.4,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv031",
+    "hoten": "Huỳnh Ngọc Mai",
+    "tuoi": 19,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien31@gmail.com",
+    "sdt": "0900000031",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N3",
+        "certLink": "https://example.com/cert/sv31-jp",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv31-kr",
+        "ghiChu": "Đang học nâng cao"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv31-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.2,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.4,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv032",
+    "hoten": "Lý Minh Khoa",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien32@gmail.com",
+    "sdt": "0900000032",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv32-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv32-kr",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.7,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.5,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv033",
+    "hoten": "Ngô Quang Vinh",
+    "tuoi": 19,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien33@gmail.com",
+    "sdt": "0900000033",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv33-kr",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.0,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.2,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv034",
+    "hoten": "Trương Bảo Ngọc",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien34@gmail.com",
+    "sdt": "0900000034",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv34-jp",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.0,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.6,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv035",
+    "hoten": "Dương Quốc Việt",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien35@gmail.com",
+    "sdt": "0900000035",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv35-zh",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.4,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.6,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.4,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv036",
+    "hoten": "Mai Phương Anh",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien36@gmail.com",
+    "sdt": "0900000036",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv36-zh",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv36-kr",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv36-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.2,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.6,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.5,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv037",
+    "hoten": "Đinh Hoàng Long",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien37@gmail.com",
+    "sdt": "0900000037",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv37-en",
+        "ghiChu": "Đang học nâng cao"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv37-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv038",
+    "hoten": "Lâm Thùy Trang",
+    "tuoi": 22,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTH02",
+    "email": "sinhvien38@gmail.com",
+    "sdt": "0900000038",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv38-jp",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.9,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv039",
+    "hoten": "Cao Minh Nhật",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien39@gmail.com",
+    "sdt": "0900000039",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv39-kr",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv39-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv39-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.2,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.5,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv040",
+    "hoten": "Tạ Ngọc Huyền",
+    "tuoi": 23,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien40@gmail.com",
+    "sdt": "0900000040",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv40-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.2,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.5,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.9,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv041",
+    "hoten": "Nguyễn Thành Đạt",
+    "tuoi": 22,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien41@gmail.com",
+    "sdt": "0900000041",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv41-jp",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.1,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 4.7,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.2,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv042",
+    "hoten": "Trần Ngọc Diệp",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien42@gmail.com",
+    "sdt": "0900000042",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv42-jp",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv42-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.2,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv043",
+    "hoten": "Lê Minh Triết",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien43@gmail.com",
+    "sdt": "0900000043",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv43-zh",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.4,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.2,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv044",
+    "hoten": "Phạm Khánh An",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien44@gmail.com",
+    "sdt": "0900000044",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv44-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.1,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.0,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv045",
+    "hoten": "Hoàng Quốc Bảo",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien45@gmail.com",
+    "sdt": "0900000045",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv45-zh",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv45-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.3,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv046",
+    "hoten": "Võ Thanh Tâm",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien46@gmail.com",
+    "sdt": "0900000046",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv46-kr",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.5,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.7,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.6,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv047",
+    "hoten": "Đặng Minh Châu",
+    "tuoi": 20,
+    "phai": "Nam",
+    "namhoc": "2023-2027",
+    "khoa": "Công nghệ thông tin",
+    "malop": "14DHTM01",
+    "email": "sinhvien47@gmail.com",
+    "sdt": "0900000047",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv47-zh",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 4.9,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.7,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv048",
+    "hoten": "Bùi Hoàng Phúc",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien48@gmail.com",
+    "sdt": "0900000048",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv48-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.2,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 9.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 9.0,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv049",
+    "hoten": "Đỗ Thị Ngân",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien49@gmail.com",
+    "sdt": "0900000049",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N4",
+        "certLink": "https://example.com/cert/sv49-jp",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 4.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.6,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 4.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv050",
+    "hoten": "Phan Gia Minh",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien50@gmail.com",
+    "sdt": "0900000050",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv50-zh",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv50-jp",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.6,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.9,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv051",
+    "hoten": "Huỳnh Thanh Hà",
+    "tuoi": 20,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien51@gmail.com",
+    "sdt": "0900000051",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv51-en",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv51-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.7,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv052",
+    "hoten": "Lý Quốc Hưng",
+    "tuoi": 23,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien52@gmail.com",
+    "sdt": "0900000052",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK II",
+        "certLink": "https://example.com/cert/sv52-kr",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.3,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.6,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv053",
+    "hoten": "Ngô Thảo Nguyên",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien53@gmail.com",
+    "sdt": "0900000053",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv53-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.3,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.5,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.5,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv054",
+    "hoten": "Trương Minh Khôi",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien54@gmail.com",
+    "sdt": "0900000054",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv54-zh",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.6,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv055",
+    "hoten": "Dương Thùy Dung",
+    "tuoi": 19,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien55@gmail.com",
+    "sdt": "0900000055",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv55-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.5,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.0,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv056",
+    "hoten": "Mai Đức Thịnh",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH01",
+    "email": "sinhvien56@gmail.com",
+    "sdt": "0900000056",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv56-en",
+        "ghiChu": "Đang học nâng cao"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv56-zh",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv56-kr",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.7,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.0,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv057",
+    "hoten": "Đinh Ngọc Anh",
+    "tuoi": 19,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien57@gmail.com",
+    "sdt": "0900000057",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv57-zh",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv57-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.2,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.4,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv058",
+    "hoten": "Lâm Quốc Khánh",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien58@gmail.com",
+    "sdt": "0900000058",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv58-en",
+        "ghiChu": "Đang học nâng cao"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N3",
+        "certLink": "https://example.com/cert/sv58-jp",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.1,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 7.9,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv059",
+    "hoten": "Cao Hải Yến",
+    "tuoi": 19,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien59@gmail.com",
+    "sdt": "0900000059",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv59-jp",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv59-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.8,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 4.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv060",
+    "hoten": "Tạ Minh Hoàng",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien60@gmail.com",
+    "sdt": "0900000060",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv60-kr",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.9,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 6.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.7,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv061",
+    "hoten": "Nguyễn Khánh Duy",
+    "tuoi": 20,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien61@gmail.com",
+    "sdt": "0900000061",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv61-kr",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Nhật",
+        "trinhDo": "N5",
+        "certLink": "https://example.com/cert/sv61-jp",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 9.1,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 9.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv062",
+    "hoten": "Trần Phương Linh",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien62@gmail.com",
+    "sdt": "0900000062",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B1",
+        "certLink": "https://example.com/cert/sv62-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.9,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.7,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv063",
+    "hoten": "Lê Quốc Tuấn",
+    "tuoi": 23,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien63@gmail.com",
+    "sdt": "0900000063",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv63-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.0,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.0,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv064",
+    "hoten": "Phạm Ngọc Trâm",
+    "tuoi": 19,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien64@gmail.com",
+    "sdt": "0900000064",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK II",
+        "certLink": "https://example.com/cert/sv64-kr",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv64-zh",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 6.2,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.6,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 6.9,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv065",
+    "hoten": "Hoàng Minh Tân",
+    "tuoi": 20,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTH02",
+    "email": "sinhvien65@gmail.com",
+    "sdt": "0900000065",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 4",
+        "certLink": "https://example.com/cert/sv65-zh",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.5,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 5.5,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 5.1,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv066",
+    "hoten": "Võ Gia Bảo",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTM01",
+    "email": "sinhvien66@gmail.com",
+    "sdt": "0900000066",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK II",
+        "certLink": "https://example.com/cert/sv66-kr",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv66-zh",
+        "ghiChu": "Có chứng chỉ quốc tế"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 9.1,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 7.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.8,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv067",
+    "hoten": "Đặng Thanh Vy",
+    "tuoi": 19,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTM01",
+    "email": "sinhvien67@gmail.com",
+    "sdt": "0900000067",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Trung",
+        "trinhDo": "HSK 3",
+        "certLink": "https://example.com/cert/sv67-zh",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 8.5,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.6,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.0,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv068",
+    "hoten": "Bùi Minh Quang",
+    "tuoi": 20,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTM01",
+    "email": "sinhvien68@gmail.com",
+    "sdt": "0900000068",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "B2",
+        "certLink": "https://example.com/cert/sv68-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 7.6,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.3,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 7.5,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.2,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv069",
+    "hoten": "Đỗ Hoàng Yến",
+    "tuoi": 21,
+    "phai": "Nam",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTM01",
+    "email": "sinhvien69@gmail.com",
+    "sdt": "0900000069",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK I",
+        "certLink": "https://example.com/cert/sv69-kr",
+        "ghiChu": "Đang học nâng cao"
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 5.4,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 5.1,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 4.7,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 6.3,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  },
+  {
+    "masv": "sv070",
+    "hoten": "Phan Nhật Hào",
+    "tuoi": 21,
+    "phai": "Nữ",
+    "namhoc": "2024-2028",
+    "khoa": "Công nghệ thông tin",
+    "malop": "15DHTM01",
+    "email": "sinhvien70@gmail.com",
+    "sdt": "0900000070",
+    "ngoaingu": [
+      {
+        "tenNgoaiNgu": "Tiếng Hàn",
+        "trinhDo": "TOPIK II",
+        "certLink": "https://example.com/cert/sv70-kr",
+        "ghiChu": ""
+      },
+      {
+        "tenNgoaiNgu": "Tiếng Anh",
+        "trinhDo": "A2",
+        "certLink": "https://example.com/cert/sv70-en",
+        "ghiChu": ""
+      }
+    ],
+    "monhoc": [
+      {
+        "mamon": "csdl",
+        "tenmon": "Cơ sở dữ liệu",
+        "diem": 9.1,
+        "stc": 3,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "laptrinh",
+        "tenmon": "Lập trình Cơ bản",
+        "diem": 8.4,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "web",
+        "tenmon": "Lập trình Web",
+        "diem": 8.7,
+        "stc": 2,
+        "danhgia": "Đạt"
+      },
+      {
+        "mamon": "ctdl",
+        "tenmon": "Cấu trúc dữ liệu và Giải thuật",
+        "diem": 8.8,
+        "stc": 1,
+        "danhgia": "Đạt"
+      }
+    ]
+  }
+]
