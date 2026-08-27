@@ -207,9 +207,24 @@ namespace StudentManagement.Services
             await _repository.ReplaceStudentAsync(existing.Id, student);
         }
 
-        public async Task<List<ClassStatisticDto>> GetStudentsCountByClassAsync()
+        public async Task<DashboardKpiDto> GetDashboardKpiAsync()
         {
-            return await _repository.GetStudentsCountByClassAsync();
+            return await _repository.GetDashboardKpiAsync();
+        }
+
+        public async Task<List<ClassStatisticDto>> GetClassStatisticsAsync()
+        {
+            return await _repository.GetClassStatisticsAsync();
+        }
+
+        public async Task<List<LanguageStatisticDto>> GetLanguageStatisticsAsync()
+        {
+            return await _repository.GetLanguageStatisticsAsync();
+        }
+
+        public async Task<List<AcademicClassificationDto>> GetAcademicClassificationsAsync()
+        {
+            return await _repository.GetAcademicClassificationsAsync();
         }
 
         public async Task<List<StudentGpaDto>> GetStudentGpasAsync()

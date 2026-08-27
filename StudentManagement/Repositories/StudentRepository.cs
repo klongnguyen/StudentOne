@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Bson;
@@ -141,27 +142,188 @@ namespace StudentManagement.Repositories
             }
         }
 
-        public async Task<List<ClassStatisticDto>> GetStudentsCountByClassAsync()
+        public async Task<DashboardKpiDto> GetDashboardKpiAsync()
         {
             var pipeline = new[]
             {
+                new BsonDocument("$facet", new BsonDocument
+                {
+                    { "totalInfo", new BsonArray
+                        {
+                            new BsonDocument("$group", new BsonDocument
+                            {
+                                { "_id", BsonNull.Value },
+                                { "TotalStudents", new BsonDocument("$sum", 1) },
+                                { "MaleCount", new BsonDocument("$sum", new BsonDocument("$cond", new BsonArray { new BsonDocument("$eq", new BsonArray { "$phai", "Nam" }), 1, 0 })) },
+                                { "FemaleCount", new BsonDocument("$sum", new BsonDocument("$cond", new BsonArray { new BsonDocument("$eq", new BsonArray { "$phai", "Nữ" }), 1, 0 })) }
+                            })
+                        }
+                    },
+                    { "classInfo", new BsonArray
+                        {
+                            new BsonDocument("$group", new BsonDocument { { "_id", "$malop" } }),
+                            new BsonDocument("$count", "TotalClasses")
+                        }
+                    },
+                    { "gpaInfo", new BsonArray
+                        {
+                            new BsonDocument("$unwind", new BsonDocument { { "path", "$monhoc" }, { "preserveNullAndEmptyArrays", true } }),
+                            new BsonDocument("$group", new BsonDocument
+                            {
+                                { "_id", "$masv" },
+                                { "TotalWeightedScore", new BsonDocument("$sum", new BsonDocument("$multiply", new BsonArray { "$monhoc.diem", "$monhoc.stc" })) },
+                                { "TotalCredits", new BsonDocument("$sum", "$monhoc.stc") }
+                            }),
+                            new BsonDocument("$project", new BsonDocument
+                            {
+                                { "GPA", new BsonDocument("$cond", new BsonArray { new BsonDocument("$gt", new BsonArray { "$TotalCredits", 0 }), new BsonDocument("$divide", new BsonArray { "$TotalWeightedScore", "$TotalCredits" }), 0 }) }
+                            }),
+                            new BsonDocument("$group", new BsonDocument
+                            {
+                                { "_id", BsonNull.Value },
+                                { "AverageGpa", new BsonDocument("$avg", "$GPA") }
+                            })
+                        }
+                    }
+                })
+            };
+
+            var aggregate = await _students.AggregateAsync<BsonDocument>(pipeline);
+            var result = await aggregate.FirstOrDefaultAsync();
+
+            var dto = new DashboardKpiDto();
+            if (result != null)
+            {
+                var totalInfo = result["totalInfo"].AsBsonArray.Count > 0 ? result["totalInfo"][0].AsBsonDocument : null;
+                var classInfo = result["classInfo"].AsBsonArray.Count > 0 ? result["classInfo"][0].AsBsonDocument : null;
+                var gpaInfo = result["gpaInfo"].AsBsonArray.Count > 0 ? result["gpaInfo"][0].AsBsonDocument : null;
+
+                if (totalInfo != null)
+                {
+                    dto.TotalStudents = totalInfo["TotalStudents"].AsInt32;
+                    int maleCount = totalInfo["MaleCount"].AsInt32;
+                    int femaleCount = totalInfo["FemaleCount"].AsInt32;
+                    if (dto.TotalStudents > 0)
+                    {
+                        dto.MalePercentage = Math.Round((double)maleCount / dto.TotalStudents * 100, 1);
+                        dto.FemalePercentage = Math.Round((double)femaleCount / dto.TotalStudents * 100, 1);
+                    }
+                }
+                
+                if (classInfo != null) dto.TotalClasses = classInfo["TotalClasses"].AsInt32;
+                if (gpaInfo != null) dto.AverageGpa = Math.Round(gpaInfo["AverageGpa"].AsDouble, 2);
+            }
+            return dto;
+        }
+
+        public async Task<List<ClassStatisticDto>> GetClassStatisticsAsync()
+        {
+            var pipeline = new[]
+            {
+                new BsonDocument("$unwind", new BsonDocument { { "path", "$monhoc" }, { "preserveNullAndEmptyArrays", true } }),
                 new BsonDocument("$group", new BsonDocument
                 {
-                    { "_id", new BsonDocument { { "MaLop", "$malop" }, { "Khoa", "$khoa" } } },
-                    { "TotalStudents", new BsonDocument("$sum", 1) }
+                    { "_id", new BsonDocument { { "masv", "$masv" }, { "malop", "$malop" } } },
+                    { "TotalWeightedScore", new BsonDocument("$sum", new BsonDocument("$multiply", new BsonArray { "$monhoc.diem", "$monhoc.stc" })) },
+                    { "TotalCredits", new BsonDocument("$sum", "$monhoc.stc") }
+                }),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "malop", "$_id.malop" },
+                    { "GPA", new BsonDocument("$cond", new BsonArray { new BsonDocument("$gt", new BsonArray { "$TotalCredits", 0 }), new BsonDocument("$divide", new BsonArray { "$TotalWeightedScore", "$TotalCredits" }), 0 }) }
+                }),
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", "$malop" },
+                    { "TotalStudents", new BsonDocument("$sum", 1) },
+                    { "MaxGpa", new BsonDocument("$max", "$GPA") },
+                    { "MinGpa", new BsonDocument("$min", "$GPA") }
                 }),
                 new BsonDocument("$project", new BsonDocument
                 {
                     { "_id", 0 },
-                    { "MaLop", "$_id.MaLop" },
-                    { "Khoa", "$_id.Khoa" },
-                    { "TotalStudents", 1 }
+                    { "MaLop", "$_id" },
+                    { "TotalStudents", 1 },
+                    { "MaxGpa", new BsonDocument("$round", new BsonArray { "$MaxGpa", 2 }) },
+                    { "MinGpa", new BsonDocument("$round", new BsonArray { "$MinGpa", 2 }) }
                 }),
-                new BsonDocument("$sort", new BsonDocument("TotalStudents", -1))
+                new BsonDocument("$sort", new BsonDocument("MaLop", 1))
             };
 
             var aggregate = await _students.AggregateAsync<ClassStatisticDto>(pipeline);
             return await aggregate.ToListAsync();
+        }
+
+        public async Task<List<LanguageStatisticDto>> GetLanguageStatisticsAsync()
+        {
+            var pipeline = new[]
+            {
+                new BsonDocument("$unwind", "$ngoaingu"),
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", "$ngoaingu.tenNgoaiNgu" },
+                    { "Count", new BsonDocument("$sum", 1) }
+                }),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "_id", 0 },
+                    { "Language", "$_id" },
+                    { "Count", 1 }
+                }),
+                new BsonDocument("$sort", new BsonDocument("Count", -1))
+            };
+            var aggregate = await _students.AggregateAsync<LanguageStatisticDto>(pipeline);
+            return await aggregate.ToListAsync();
+        }
+
+        public async Task<List<AcademicClassificationDto>> GetAcademicClassificationsAsync()
+        {
+            var pipeline = new[]
+            {
+                new BsonDocument("$unwind", new BsonDocument { { "path", "$monhoc" }, { "preserveNullAndEmptyArrays", true } }),
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", "$masv" },
+                    { "TotalWeightedScore", new BsonDocument("$sum", new BsonDocument("$multiply", new BsonArray { "$monhoc.diem", "$monhoc.stc" })) },
+                    { "TotalCredits", new BsonDocument("$sum", "$monhoc.stc") }
+                }),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "GPA", new BsonDocument("$cond", new BsonArray { new BsonDocument("$gt", new BsonArray { "$TotalCredits", 0 }), new BsonDocument("$divide", new BsonArray { "$TotalWeightedScore", "$TotalCredits" }), 0 }) }
+                }),
+                new BsonDocument("$bucket", new BsonDocument
+                {
+                    { "groupBy", "$GPA" },
+                    { "boundaries", new BsonArray { 0, 5.5, 7.0, 8.5, 10.1 } }, // 10.1 is upper bound so 10.0 is included in Xuat sac
+                    { "default", "Unknown" },
+                    { "output", new BsonDocument { { "Count", new BsonDocument("$sum", 1) } } }
+                })
+            };
+
+            var aggregate = await _students.AggregateAsync<BsonDocument>(pipeline);
+            var results = await aggregate.ToListAsync();
+
+            var list = new List<AcademicClassificationDto>
+            {
+                new AcademicClassificationDto { Classification = "Trung bình/Yếu", Count = 0 },
+                new AcademicClassificationDto { Classification = "Khá", Count = 0 },
+                new AcademicClassificationDto { Classification = "Giỏi", Count = 0 },
+                new AcademicClassificationDto { Classification = "Xuất sắc", Count = 0 }
+            };
+
+            foreach (var r in results)
+            {
+                if (r["_id"].IsNumeric)
+                {
+                    double bound = r["_id"].AsDouble;
+                    if (bound == 0) list[0].Count = r["Count"].AsInt32;
+                    else if (bound == 5.5) list[1].Count = r["Count"].AsInt32;
+                    else if (bound == 7.0) list[2].Count = r["Count"].AsInt32;
+                    else if (bound == 8.5) list[3].Count = r["Count"].AsInt32;
+                }
+            }
+
+            return list;
         }
 
         public async Task<List<StudentGpaDto>> GetStudentGpasAsync()

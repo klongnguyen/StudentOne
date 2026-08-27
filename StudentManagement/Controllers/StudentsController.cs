@@ -172,10 +172,31 @@ namespace StudentManagement.Controllers
             }
         }
 
+        [HttpGet("stats/kpi")]
+        public async Task<IActionResult> GetDashboardKpi()
+        {
+            var kpi = await _service.GetDashboardKpiAsync();
+            return Ok(kpi);
+        }
+
         [HttpGet("stats/by-class")]
         public async Task<IActionResult> GetStatsByClass()
         {
-            var stats = await _service.GetStudentsCountByClassAsync();
+            var stats = await _service.GetClassStatisticsAsync();
+            return Ok(stats);
+        }
+
+        [HttpGet("stats/languages")]
+        public async Task<IActionResult> GetLanguageStats()
+        {
+            var stats = await _service.GetLanguageStatisticsAsync();
+            return Ok(stats);
+        }
+
+        [HttpGet("stats/classifications")]
+        public async Task<IActionResult> GetAcademicClassifications()
+        {
+            var stats = await _service.GetAcademicClassificationsAsync();
             return Ok(stats);
         }
 

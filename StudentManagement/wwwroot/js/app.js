@@ -1,7 +1,6 @@
 const API_URL = '/api/students';
 
-let classChartInstance = null;
-let gpaChartInstance = null;
+let languageChartInstance = null;
 
 const app = {
     students: [],
@@ -332,45 +331,89 @@ const app = {
     },
 
     loadStats: function() {
+        // 1. KPI Cards
+        fetch(API_URL + '/stats/kpi')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('kpi-total-students').innerText = data.totalStudents;
+                document.getElementById('kpi-total-classes').innerText = data.totalClasses;
+                document.getElementById('kpi-avg-gpa').innerText = data.averageGpa.toFixed(2);
+                document.getElementById('kpi-gender-ratio').innerText = `${data.malePercentage}% / ${data.femalePercentage}%`;
+            });
+
+        // 2. Class Stats Table
         fetch(API_URL + '/stats/by-class')
             .then(r => r.json())
             .then(data => {
-                const ctx = document.getElementById('classChart');
-                if (classChartInstance) classChartInstance.destroy();
-                
-                classChartInstance = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                        labels: data.map(d => d.maLop + (d.khoa ? ' (' + d.khoa + ')' : '')),
-                        datasets: [{
-                            label: 'Số lượng Sinh viên',
-                            data: data.map(d => d.totalStudents),
-                            backgroundColor: [
-                                '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#14b8a6'
-                            ]
-                        }]
-                    },
-                    options: {
-                        responsive: true
-                    }
+                const tbody = document.querySelector('#classStatsTable tbody');
+                tbody.innerHTML = '';
+                data.forEach(d => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td><strong>${d.maLop}</strong></td>
+                            <td>${d.totalStudents}</td>
+                            <td><span class="badge secondary">${d.maxGpa.toFixed(2)}</span></td>
+                            <td><span class="badge" style="background:#fee2e2;color:#dc2626">${d.minGpa.toFixed(2)}</span></td>
+                        </tr>
+                    `;
                 });
             });
 
+        // 3. Top 5 GPA Table
         fetch(API_URL + '/stats/gpa')
             .then(r => r.json())
             .then(data => {
-                const top10 = data.slice(0, 10);
-                const ctx = document.getElementById('gpaChart');
-                if (gpaChartInstance) gpaChartInstance.destroy();
+                const tbody = document.querySelector('#topGpaTable tbody');
+                tbody.innerHTML = '';
+                const top5 = data.slice(0, 5);
+                top5.forEach(d => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td><strong>${d.maSV}</strong></td>
+                            <td>${d.hoTen}</td>
+                            <td><span class="badge-danhgia badge-dat">${d.gpa.toFixed(2)}</span></td>
+                        </tr>
+                    `;
+                });
+            });
 
-                gpaChartInstance = new Chart(ctx, {
+        // 4. Academic Classifications Table
+        fetch(API_URL + '/stats/classifications')
+            .then(r => r.json())
+            .then(data => {
+                const tbody = document.querySelector('#classificationTable tbody');
+                tbody.innerHTML = '';
+                data.forEach(d => {
+                    let badgeClass = 'secondary';
+                    if (d.classification === 'Xuất sắc') badgeClass = 'badge-dat';
+                    else if (d.classification === 'Giỏi') badgeClass = 'badge-dat';
+                    else if (d.classification === 'Khá') badgeClass = 'secondary';
+                    else badgeClass = 'badge-khongdat';
+
+                    tbody.innerHTML += `
+                        <tr>
+                            <td><span class="badge ${badgeClass}" style="font-size: 0.9rem">${d.classification}</span></td>
+                            <td><strong>${d.count}</strong> Sinh viên</td>
+                        </tr>
+                    `;
+                });
+            });
+
+        // 5. Language Popularity Histogram
+        fetch(API_URL + '/stats/languages')
+            .then(r => r.json())
+            .then(data => {
+                const ctx = document.getElementById('languageChart');
+                if (languageChartInstance) languageChartInstance.destroy();
+
+                languageChartInstance = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: top10.map(d => d.hoTen + ' (' + d.maSV + ')'),
+                        labels: data.map(d => d.language),
                         datasets: [{
-                            label: 'Điểm Trung Bình (GPA)',
-                            data: top10.map(d => d.gpa),
-                            backgroundColor: '#6366f1'
+                            label: 'Số lượng Sinh viên',
+                            data: data.map(d => d.count),
+                            backgroundColor: '#8b5cf6'
                         }]
                     },
                     options: {
@@ -378,7 +421,7 @@ const app = {
                         scales: {
                             y: {
                                 beginAtZero: true,
-                                max: 10
+                                ticks: { stepSize: 1 }
                             }
                         }
                     }

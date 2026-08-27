@@ -78,21 +78,102 @@
                 </div>
 
                 <!-- VÙNG 2: DASHBOARD THỐNG KÊ -->
-                <div id="dashboardView" class="card" style="display: none;">
-                    <div class="card-header">
-                        <h2>Biểu đồ Thống kê (Aggregation)</h2>
+                <div id="dashboardView" style="display: none;">
+                    <div class="dashboard-header">
+                        <h2>Dashboard Thống kê</h2>
                         <button class="btn btn-secondary" onclick="app.loadStats()">
                             <i class="fa-solid fa-rotate-right"></i> Làm mới
                         </button>
                     </div>
-                    <div class="charts-grid">
-                        <div class="chart-container">
-                            <h3>Sinh viên theo Lớp</h3>
-                            <canvas id="classChart"></canvas>
+
+                    <!-- KPI Cards -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="kpi-info">
+                                <h4>Tổng Sinh viên</h4>
+                                <h3 id="kpi-total-students">0</h3>
+                            </div>
                         </div>
-                        <div class="chart-container">
-                            <h3>Top 10 Sinh viên có Điểm Trung Bình (GPA) cao nhất</h3>
-                            <canvas id="gpaChart"></canvas>
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background: #e0e7ff; color: #4f46e5;"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <div class="kpi-info">
+                                <h4>Tổng số Lớp</h4>
+                                <h3 id="kpi-total-classes">0</h3>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background: #fef3c7; color: #d97706;"><i class="fa-solid fa-star"></i></div>
+                            <div class="kpi-info">
+                                <h4>Điểm TB Toàn trường</h4>
+                                <h3 id="kpi-avg-gpa">0.0</h3>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon" style="background: #fce7f3; color: #db2777;"><i class="fa-solid fa-venus-mars"></i></div>
+                            <div class="kpi-info">
+                                <h4>Tỷ lệ Nam / Nữ</h4>
+                                <h3 id="kpi-gender-ratio">0% / 0%</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tables Row 1 -->
+                    <div class="dashboard-row">
+                        <div class="card dashboard-card">
+                            <div class="card-header"><h3>Thống kê Sinh viên theo Lớp</h3></div>
+                            <div class="table-responsive">
+                                <table class="table" id="classStatsTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã Lớp</th>
+                                            <th>Sĩ số</th>
+                                            <th>Max GPA</th>
+                                            <th>Min GPA</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card">
+                            <div class="card-header"><h3>Top 5 Sinh viên điểm cao nhất</h3></div>
+                            <div class="table-responsive">
+                                <table class="table" id="topGpaTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã SV</th>
+                                            <th>Họ Tên</th>
+                                            <th>GPA</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row 2 -->
+                    <div class="dashboard-row">
+                        <div class="card dashboard-card">
+                            <div class="card-header"><h3>Thống kê Mức độ Phổ biến Ngoại ngữ</h3></div>
+                            <div class="chart-container">
+                                <canvas id="languageChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="card dashboard-card">
+                            <div class="card-header"><h3>Bảng Phân loại Học lực</h3></div>
+                            <div class="table-responsive">
+                                <table class="table" id="classificationTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Xếp loại</th>
+                                            <th>Số lượng Sinh viên</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
