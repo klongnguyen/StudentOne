@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using StudentManagement.Data;
 using StudentManagement.Models;
@@ -138,6 +139,64 @@ namespace StudentManagement.Repositories
             {
                 throw new DuplicateKeyException($"Sinh viên với mã '{student.MaSV}' đã tồn tại.");
             }
+        }
+
+        public async Task<List<ClassStatisticDto>> GetStudentsCountByClassAsync()
+        {
+            var pipeline = new[]
+            {
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", new BsonDocument { { "MaLop", "$malop" }, { "Khoa", "$khoa" } } },
+                    { "TotalStudents", new BsonDocument("$sum", 1) }
+                }),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "_id", 0 },
+                    { "MaLop", "$_id.MaLop" },
+                    { "Khoa", "$_id.Khoa" },
+                    { "TotalStudents", 1 }
+                }),
+                new BsonDocument("$sort", new BsonDocument("TotalStudents", -1))
+            };
+
+            var aggregate = await _students.AggregateAsync<ClassStatisticDto>(pipeline);
+            return await aggregate.ToListAsync();
+        }
+
+        public async Task<List<StudentGpaDto>> GetStudentGpasAsync()
+        {
+            var pipeline = new[]
+            {
+                new BsonDocument("$unwind", new BsonDocument
+                {
+                    { "path", "$monhoc" },
+                    { "preserveNullAndEmptyArrays", true }
+                }),
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", new BsonDocument { { "MaSV", "$masv" }, { "HoTen", "$hoten" } } },
+                    { "TotalWeightedScore", new BsonDocument("$sum", new BsonDocument("$multiply", new BsonArray { "$monhoc.diem", "$monhoc.stc" })) },
+                    { "TotalCredits", new BsonDocument("$sum", "$monhoc.stc") }
+                }),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "_id", 0 },
+                    { "MaSV", "$_id.MaSV" },
+                    { "HoTen", "$_id.HoTen" },
+                    { "GPA", new BsonDocument("$cond", new BsonArray
+                        {
+                            new BsonDocument("$gt", new BsonArray { "$TotalCredits", 0 }),
+                            new BsonDocument("$divide", new BsonArray { "$TotalWeightedScore", "$TotalCredits" }),
+                            0
+                        }) 
+                    }
+                }),
+                new BsonDocument("$sort", new BsonDocument("GPA", -1))
+            };
+
+            var aggregate = await _students.AggregateAsync<StudentGpaDto>(pipeline);
+            return await aggregate.ToListAsync();
         }
     }
 }

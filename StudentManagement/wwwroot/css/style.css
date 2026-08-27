@@ -462,3 +462,32 @@ body {
 .dynamic-row.lang-row .row-bottom {
     margin-top: 12px;
 }
+
+/* Thống kê - Charts */
+.mt-24 {
+    margin-top: 24px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 16px;
+}
+
+.chart-container {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.chart-container h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}

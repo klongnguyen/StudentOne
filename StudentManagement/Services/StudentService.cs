@@ -172,7 +172,7 @@ namespace StudentManagement.Services
 
             var student = new Student
             {
-                Id = existing.Id, // Giữ nguyên ObjectId cũ
+                Id = existing.Id,
                 MaSV = dto.MaSV,
                 HoTen = dto.HoTen,
                 Tuoi = dto.Tuoi,
@@ -205,6 +205,16 @@ namespace StudentManagement.Services
             };
 
             await _repository.ReplaceStudentAsync(existing.Id, student);
+        }
+
+        public async Task<List<ClassStatisticDto>> GetStudentsCountByClassAsync()
+        {
+            return await _repository.GetStudentsCountByClassAsync();
+        }
+
+        public async Task<List<StudentGpaDto>> GetStudentGpasAsync()
+        {
+            return await _repository.GetStudentGpasAsync();
         }
 
         private void ValidateStudent(string masv, string hoten, int tuoi, string phai, string malop, string? email, string? sdt)

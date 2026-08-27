@@ -18,5 +18,8 @@ namespace StudentManagement.Repositories
         Task AddSubjectAsync(string masv, Subject subject);
         Task UpdateSubjectScoreAsync(string masv, string mamon, double score);
         Task ReplaceStudentAsync(string id, Student student);
+        
+        Task<List<ClassStatisticDto>> GetStudentsCountByClassAsync();
+        Task<List<StudentGpaDto>> GetStudentGpasAsync();
     }
 }

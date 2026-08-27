@@ -171,5 +171,19 @@ namespace StudentManagement.Controllers
                 return Conflict(ex.Message);
             }
         }
+
+        [HttpGet("stats/by-class")]
+        public async Task<IActionResult> GetStatsByClass()
+        {
+            var stats = await _service.GetStudentsCountByClassAsync();
+            return Ok(stats);
+        }
+
+        [HttpGet("stats/gpa")]
+        public async Task<IActionResult> GetStudentGpas()
+        {
+            var gpas = await _service.GetStudentGpasAsync();
+            return Ok(gpas);
+        }
     }
 }

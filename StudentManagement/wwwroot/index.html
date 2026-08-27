@@ -27,8 +27,8 @@
                 <h2><i class="fa-solid fa-graduation-cap"></i> EduAdmin</h2>
             </div>
             <nav class="sidebar-nav">
-                <a href="#" class="active"><i class="fa-solid fa-users"></i> Sinh viên</a>
-                <a href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+                <a href="#" id="nav-students" class="active" onclick="app.switchTab('students')"><i class="fa-solid fa-users"></i> Sinh viên</a>
+                <a href="#" id="nav-dashboard" onclick="app.switchTab('dashboard')"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
                 <a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a>
             </nav>
         </aside>
@@ -43,7 +43,8 @@
             </header>
 
             <div class="content-wrapper">
-                <div class="card table-card">
+                <!-- VÙNG 1: QUẢN LÝ SINH VIÊN -->
+                <div id="studentsView" class="card table-card">
                     <div class="card-header">
                         <h3>Danh sách Sinh viên</h3>
                         <div class="header-actions">
@@ -75,8 +76,28 @@
                         </table>
                     </div>
                 </div>
-            </div>
-        </main>
+
+                <!-- VÙNG 2: DASHBOARD THỐNG KÊ -->
+                <div id="dashboardView" class="card" style="display: none;">
+                    <div class="card-header">
+                        <h2>Biểu đồ Thống kê (Aggregation)</h2>
+                        <button class="btn btn-secondary" onclick="app.loadStats()">
+                            <i class="fa-solid fa-rotate-right"></i> Làm mới
+                        </button>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3>Sinh viên theo Lớp</h3>
+                            <canvas id="classChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Top 10 Sinh viên có Điểm Trung Bình (GPA) cao nhất</h3>
+                            <canvas id="gpaChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
 
     <!-- Student Modal Form -->
@@ -164,6 +185,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

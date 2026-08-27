@@ -1,5 +1,8 @@
 const API_URL = '/api/students';
 
+let classChartInstance = null;
+let gpaChartInstance = null;
+
 const app = {
     students: [],
     isEditMode: false,
@@ -7,6 +10,27 @@ const app = {
     init: function() {
         this.loadStudents();
         this.setupSearch();
+        this.loadStats();
+    },
+
+    switchTab: function(tabName) {
+        // Remove active class from nav items
+        document.getElementById('nav-students').classList.remove('active');
+        document.getElementById('nav-dashboard').classList.remove('active');
+        
+        // Hide all views
+        document.getElementById('studentsView').style.display = 'none';
+        document.getElementById('dashboardView').style.display = 'none';
+        
+        // Activate selected tab
+        if (tabName === 'students') {
+            document.getElementById('nav-students').classList.add('active');
+            document.getElementById('studentsView').style.display = 'block';
+        } else if (tabName === 'dashboard') {
+            document.getElementById('nav-dashboard').classList.add('active');
+            document.getElementById('dashboardView').style.display = 'block';
+            this.loadStats(); // Reload charts to fix resize issues when changing display
+        }
     },
 
     // ----------------------------------------------------
@@ -268,6 +292,7 @@ const app = {
                 Swal.fire('Thành công', 'Đã lưu thông tin sinh viên.', 'success');
                 this.closeForm();
                 this.loadStudents();
+                this.loadStats();
             } else {
                 const errText = await res.text();
                 Swal.fire('Lỗi', errText || 'Đã xảy ra lỗi', 'error');
@@ -294,6 +319,7 @@ const app = {
                     if (res.ok) {
                         Swal.fire('Đã xóa!', `Sinh viên ${masv} đã bị xóa khỏi cơ sở dữ liệu.`, 'success');
                         this.loadStudents();
+                        this.loadStats();
                     } else {
                         const err = await res.text();
                         Swal.fire('Lỗi', err, 'error');
@@ -303,6 +329,61 @@ const app = {
                 }
             }
         });
+    },
+
+    loadStats: function() {
+        fetch(API_URL + '/stats/by-class')
+            .then(r => r.json())
+            .then(data => {
+                const ctx = document.getElementById('classChart');
+                if (classChartInstance) classChartInstance.destroy();
+                
+                classChartInstance = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: data.map(d => d.maLop + (d.khoa ? ' (' + d.khoa + ')' : '')),
+                        datasets: [{
+                            label: 'Số lượng Sinh viên',
+                            data: data.map(d => d.totalStudents),
+                            backgroundColor: [
+                                '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#14b8a6'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true
+                    }
+                });
+            });
+
+        fetch(API_URL + '/stats/gpa')
+            .then(r => r.json())
+            .then(data => {
+                const top10 = data.slice(0, 10);
+                const ctx = document.getElementById('gpaChart');
+                if (gpaChartInstance) gpaChartInstance.destroy();
+
+                gpaChartInstance = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: top10.map(d => d.hoTen + ' (' + d.maSV + ')'),
+                        datasets: [{
+                            label: 'Điểm Trung Bình (GPA)',
+                            data: top10.map(d => d.gpa),
+                            backgroundColor: '#6366f1'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 10
+                            }
+                        }
+                    }
+                });
+            });
     }
 };
 

@@ -17,5 +17,8 @@ namespace StudentManagement.Services
         Task AddSubjectAsync(string masv, SubjectDto subjectDto);
         Task UpdateSubjectScoreAsync(string masv, string mamon, double score);
         Task ReplaceStudentAsync(string masv, StudentCreateDto dto);
+
+        Task<List<ClassStatisticDto>> GetStudentsCountByClassAsync();
+        Task<List<StudentGpaDto>> GetStudentGpasAsync();
     }
 }
