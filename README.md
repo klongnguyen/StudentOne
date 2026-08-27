@@ -23,6 +23,14 @@
   - Thống kê độ phổ biến ngôn ngữ bằng `$unwind` kết hợp `$group`.
 - **Tự động hóa CSDL**: Tự động đánh `Unique Index` (chống trùng lặp Mã SV), `Compound Index` (tối ưu tìm kiếm), và tự động tạo (seed) 20 dữ liệu sinh viên mẫu ở lần khởi chạy đầu tiên.
 
+## 📸 Giao diện Ứng dụng
+### 1. Quản lý Sinh viên
+<img src="StudentManagement/docs/images/student_list.png" width="100%" alt="Danh sách Sinh viên">
+
+### 2. Dashboard Thống Kê
+<img src="StudentManagement/docs/images/dashboard.png" width="100%" alt="Dashboard Giao Diện">
+
+--- 
 ## 📂 Cấu trúc thư mục (Folder Structure)
 ```text
 StudentManagement/
@@ -40,14 +48,6 @@ StudentManagement/
 ├── Program.cs          # File khởi chạy và cấu hình Pipeline của .NET Core
 └── appsettings.json    # File cấu hình ứng dụng (có thể cấu hình ConnectionString)
 ```
-
-## 📸 Giao diện Ứng dụng
-### 1. Quản lý Sinh viên
-<img src="StudentManagement/docs/images/student_list.png" width="100%" alt="Danh sách Sinh viên">
-
-### 2. Dashboard Thống Kê
-<img src="StudentManagement/docs/images/dashboard.png" width="100%" alt="Dashboard Giao Diện">
-
 ---
 ## 🛠 Hướng dẫn Cài đặt & Chạy ứng dụng
 
