@@ -1,23 +1,54 @@
 # 🎓 Ứng Dụng Quản Lý Sinh Viên - MongoDB & .NET Core API
 
-Dự án này là một hệ thống quản lý sinh viên được xây dựng hoàn toàn bằng **C# .NET Core 8.0 Web API** kết hợp cơ sở dữ liệu NoSQL **MongoDB**. Giao diện Frontend được viết bằng HTML, CSS (Vanilla) và JavaScript, giao tiếp trực tiếp với Backend qua RESTful API.
+## 📖 Giới thiệu Dự án
+Ứng dụng Quản lý Sinh viên là giải pháp số hóa quy trình theo dõi và đánh giá thông tin học tập của sinh viên. 
+- **Vấn đề giải quyết**: Khắc phục sự cồng kềnh, kém linh hoạt của cơ sở dữ liệu quan hệ truyền thống khi cần lưu trữ lượng dữ liệu thay đổi liên tục và đa chiều (như danh sách môn học, chứng chỉ ngoại ngữ).
+- **Đối tượng sử dụng**: Phòng đào tạo, Cán bộ quản lý sinh viên tại các trường Đại học/Cao đẳng.
+- **Tại sao xây dựng**: Nhằm tối ưu hóa hiệu suất truy vấn thống kê lớn và đem lại trải nghiệm quản trị trực quan, tốc độ phản hồi mượt mà (dưới dạng Single Page Application).
+- **Phương pháp chính**: Ứng dụng mô hình NoSQL với cơ sở dữ liệu Document-based (MongoDB), kết hợp sức mạnh của Aggregation Framework để phân tích, thống kê dữ liệu trực tiếp tại database.
 
-## 🚀 Tính năng nổi bật
-* **Kiến trúc Singleton**: Quản lý kết nối `MongoClient` duy nhất trong suốt vòng đời ứng dụng.
-* **CRUD Hoàn chỉnh**: Thêm, đọc (phân trang/sắp xếp/tìm kiếm tuyệt đối & tương đối), cập nhật, xóa sinh viên.
-* **Mảng động (Dynamic Arrays)**: Thêm không giới hạn Môn học và Ngoại ngữ sử dụng các toán tử `$push`.
-* **Cập nhật Positional (`$`)**: Cập nhật điểm của một môn học cụ thể trong mảng.
-* **Dashboard Thống kê Aggregation**: Sử dụng `$facet`, `$bucket`, `$unwind`, `$group` để đếm KPI, vẽ biểu đồ ngôn ngữ và phân loại học lực Top sinh viên.
-* **Auto Indexing & Seeding**: Tự động tạo `Unique Index` (Mã SV) và `Compound Index` (Mã Lớp + Họ Tên) cùng với việc nhồi sẵn (seed) 20 dữ liệu mẫu ngay lần chạy đầu tiên.
+## ⚙️ Công nghệ sử dụng
+- **Backend**: C# .NET Core 8.0 Web API
+- **Database**: MongoDB (Tương tác qua thư viện `MongoDB.Driver`)
+- **Frontend**: HTML5, CSS3 (Vanilla), JavaScript (ES6)
+- **Thư viện UI/UX**: Chart.js (Vẽ biểu đồ tương tác), SweetAlert2 (Popup thông báo), FontAwesome (Hệ thống Icons)
 
-## 📸 Giao diện Ứng dụng
+## 🚀 Các chức năng chính
+- **Quản lý Sinh viên (CRUD)**: Thêm, sửa, xóa, và theo dõi hồ sơ sinh viên đầy đủ chi tiết.
+- **Tối ưu Tìm kiếm & Phân trang**: Tìm kiếm tuyệt đối/tương đối tự động theo Tên & Mã SV; phân trang danh sách động (25 sinh viên/trang).
+- **Mảng động (Dynamic Arrays)**: Thêm/Sửa/Xóa không giới hạn Môn học và Ngoại ngữ cho từng hồ sơ mà không cần thiết kế bảng phụ (Sử dụng toán tử `$push`, `$pull`, và positional update `$`).
+- **Dashboard Thống kê Nâng cao**: 
+  - Tính điểm trung bình (GPA), tỷ lệ Nam/Nữ của toàn trường.
+  - Phân loại học lực sinh viên (Xuất sắc, Giỏi, Khá, TB/Yếu) bằng cú pháp `$bucket`.
+  - Thống kê độ phổ biến ngôn ngữ bằng `$unwind` kết hợp `$group`.
+- **Tự động hóa CSDL**: Tự động đánh `Unique Index` (chống trùng lặp Mã SV), `Compound Index` (tối ưu tìm kiếm), và tự động tạo (seed) 20 dữ liệu sinh viên mẫu ở lần khởi chạy đầu tiên.
+
+## 📂 Cấu trúc thư mục (Folder Structure)
+```text
+StudentManagement/
+├── Controllers/        # Xử lý các HTTP request từ client (StudentsController)
+├── Data/               # Kết nối CSDL và Khởi tạo Seed Data/Index (DatabaseSeeder)
+├── DTOs/               # Các lớp Data Transfer Object truyền tải dữ liệu
+├── Models/             # Khai báo cấu trúc Document của MongoDB (Student)
+├── Repositories/       # Chứa các câu truy vấn tương tác trực tiếp với MongoDB
+├── Services/           # Xử lý logic nghiệp vụ, tính toán (GPA, Phân loại)
+├── wwwroot/            # Nơi chứa mã nguồn Frontend
+│   ├── css/            # Các file style định dạng giao diện (style.css)
+│   ├── js/             # Logic Frontend, xử lý sự kiện, gọi API (app.js)
+│   └── index.html      # Giao diện chính (Dashboard & Danh sách)
+├── docs/images/        # Chứa hình ảnh minh họa hiển thị cho README
+├── Program.cs          # File khởi chạy và cấu hình Pipeline của .NET Core
+└── appsettings.json    # File cấu hình ứng dụng (có thể cấu hình ConnectionString)
+
+
 ## 📸 Giao diện Ứng dụng
 ### 1. Quản lý Sinh viên
 <img src="StudentManagement/docs/images/student_list.png" width="100%" alt="Danh sách Sinh viên">
+
 ### 2. Dashboard Thống Kê
 <img src="StudentManagement/docs/images/dashboard.png" width="100%" alt="Dashboard Giao Diện">
----
 
+---
 ## 🛠 Hướng dẫn Cài đặt & Chạy ứng dụng
 
 ### 1. Yêu cầu hệ thống
@@ -59,3 +90,5 @@ dotnet run
 *   Mở trình duyệt và truy cập vào địa chỉ trên (ví dụ: `http://localhost:5195/index.html`) để sử dụng toàn bộ giao diện quản trị trực quan.
 
 > **💡 Lưu ý về Dữ liệu mẫu (Seed Data)**: Khi chạy lệnh `dotnet run` lần đầu tiên, hệ thống sẽ tự động quét cơ sở dữ liệu. Nếu chưa có dữ liệu, nó sẽ tự động chạy file `DatabaseSeeder.cs`, tạo 2 Indexes tối ưu hóa và bơm 20 sinh viên mẫu vào CSDL để bạn có thể xem Dashboard và danh sách ngay lập tức!
+
+
