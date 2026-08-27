@@ -13,10 +13,10 @@ Dự án này là một hệ thống quản lý sinh viên được xây dựng 
 ## 📸 Giao diện Ứng dụng
 
 ### 1. Dashboard Thống Kê
-![Dashboard Giao Diện](docs/images/dashboard.png)
+![Dashboard Giao Diện](StudentManagement/docs/images/dashboard.png)
 
 ### 2. Quản lý Sinh viên (Tìm kiếm, Phân trang, Lọc)
-![Danh sách Sinh viên](docs/images/student_list.png)
+![Danh sách Sinh viên](StudentManagement/docs/images/student_list.png)
 
 ---
 
