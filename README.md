@@ -39,7 +39,7 @@ StudentManagement/
 ├── docs/images/        # Chứa hình ảnh minh họa hiển thị cho README
 ├── Program.cs          # File khởi chạy và cấu hình Pipeline của .NET Core
 └── appsettings.json    # File cấu hình ứng dụng (có thể cấu hình ConnectionString)
-
+```
 
 ## 📸 Giao diện Ứng dụng
 ### 1. Quản lý Sinh viên
@@ -70,7 +70,7 @@ dotnet user-secrets set "MongoDB:ConnectionString" "mongodb://localhost:27017"
 
 # Cấu hình tên Database
 dotnet user-secrets set "MongoDB:DatabaseName" "qlsinhvien_db"
-```
+
 *(Lưu ý: Nếu không dùng `user-secrets`, bạn có thể thêm trực tiếp block `"MongoDB"` vào file `appsettings.json` ở thư mục gốc).*
 
 ### 3. Cài đặt Dependencies (Thư viện)
