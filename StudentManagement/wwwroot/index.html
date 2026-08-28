@@ -29,7 +29,7 @@
             <nav class="sidebar-nav">
                 <a href="#" id="nav-students" class="active" onclick="app.switchTab('students')"><i class="fa-solid fa-users"></i> Sinh viên</a>
                 <a href="#" id="nav-dashboard" onclick="app.switchTab('dashboard')"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
-                <a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a>
+                <a href="#" id="nav-settings" onclick="app.switchTab('settings')"><i class="fa-solid fa-gear"></i> Cài đặt</a>
             </nav>
         </aside>
 
@@ -191,6 +191,33 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- VÙNG 3: CÀI ĐẶT -->
+                <div id="settingsView" style="display: none;">
+                    <div class="card" style="max-width: 600px; margin: 0 auto; padding: 24px;">
+                        <h2 style="margin-bottom: 24px;"><i class="fa-solid fa-gear"></i> Cài đặt Giao diện</h2>
+                        
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 1.1rem;">
+                                <input type="checkbox" id="darkModeToggle" onchange="app.toggleDarkMode()" style="width: 20px; height: 20px;">
+                                Kích hoạt Chế độ Tối (Dark Mode)
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="font-size: 1.1rem; margin-bottom: 12px; display: block;">Màu chủ đạo (Primary Color)</label>
+                            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                                <button class="btn" style="background-color: #4f46e5; color: white;" onclick="app.setPrimaryColor('#4f46e5')">Indigo</button>
+                                <button class="btn" style="background-color: #2563eb; color: white;" onclick="app.setPrimaryColor('#2563eb')">Blue</button>
+                                <button class="btn" style="background-color: #059669; color: white;" onclick="app.setPrimaryColor('#059669')">Green</button>
+                                <button class="btn" style="background-color: #ea580c; color: white;" onclick="app.setPrimaryColor('#ea580c')">Orange</button>
+                                <button class="btn" style="background-color: #e11d48; color: white;" onclick="app.setPrimaryColor('#e11d48')">Rose</button>
+                                <button class="btn" style="background-color: #db2777; color: white;" onclick="app.setPrimaryColor('#db2777')">Pink</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </main>
         </div>
     </div>

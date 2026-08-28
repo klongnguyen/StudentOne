@@ -15,6 +15,7 @@ const app = {
     pageSize: 25,
     
     init: function() {
+        this.loadSettings();
         this.loadStudents();
         this.setupSearch();
         this.loadStats();
@@ -24,21 +25,30 @@ const app = {
 
     switchTab: function(tabName) {
         // Remove active class from nav items
-        document.getElementById('nav-students').classList.remove('active');
-        document.getElementById('nav-dashboard').classList.remove('active');
+        const navStudents = document.getElementById('nav-students');
+        const navDashboard = document.getElementById('nav-dashboard');
+        const navSettings = document.getElementById('nav-settings');
+        
+        if (navStudents) navStudents.classList.remove('active');
+        if (navDashboard) navDashboard.classList.remove('active');
+        if (navSettings) navSettings.classList.remove('active');
         
         // Hide all views
         document.getElementById('studentsView').style.display = 'none';
         document.getElementById('dashboardView').style.display = 'none';
+        document.getElementById('settingsView').style.display = 'none';
         
         // Activate selected tab
         if (tabName === 'students') {
-            document.getElementById('nav-students').classList.add('active');
+            if (navStudents) navStudents.classList.add('active');
             document.getElementById('studentsView').style.display = 'block';
         } else if (tabName === 'dashboard') {
-            document.getElementById('nav-dashboard').classList.add('active');
+            if (navDashboard) navDashboard.classList.add('active');
             document.getElementById('dashboardView').style.display = 'block';
             this.loadStats(); // Reload charts to fix resize issues when changing display
+        } else if (tabName === 'settings') {
+            if (navSettings) navSettings.classList.add('active');
+            document.getElementById('settingsView').style.display = 'block';
         }
     },
 
@@ -905,10 +915,45 @@ const app = {
 
         // Close list when clicking outside
         document.addEventListener('click', function (e) {
-            if (e.target !== input && e.target !== list) {
+            if (!list.parentElement.contains(e.target) && e.target !== input) {
                 list.style.display = 'none';
             }
         });
+    },
+
+    // ----------------------------------------------------
+    // CÀI ĐẶT (SETTINGS)
+    // ----------------------------------------------------
+    loadSettings: function() {
+        const isDark = localStorage.getItem('darkMode') === 'true';
+        if (isDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            const toggle = document.getElementById('darkModeToggle');
+            if (toggle) toggle.checked = true;
+        }
+
+        const primaryColor = localStorage.getItem('primaryColor');
+        if (primaryColor) {
+            document.documentElement.style.setProperty('--primary-color', primaryColor);
+        }
+    },
+
+    toggleDarkMode: function() {
+        const toggle = document.getElementById('darkModeToggle');
+        const isDark = toggle ? toggle.checked : false;
+        
+        if (isDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('darkMode', 'false');
+        }
+    },
+
+    setPrimaryColor: function(color) {
+        document.documentElement.style.setProperty('--primary-color', color);
+        localStorage.setItem('primaryColor', color);
     }
 };
 
