@@ -10,7 +10,6 @@ namespace StudentManagement.Repositories
         Task<List<Student>> GetAllAsync(string? malop = null);
         Task<Student?> GetByMaSVAsync(string masv);
         Task CreateAsync(Student student);
-        Task CreateManyAsync(IEnumerable<Student> students);
         Task UpdateBasicAsync(string masv, StudentUpdateDto updateDto);
         Task DeleteByMaSVAsync(string masv);
         Task<long> DeleteByMaLopAsync(string malop);

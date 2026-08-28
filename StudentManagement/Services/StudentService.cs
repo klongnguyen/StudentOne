@@ -93,36 +93,6 @@ namespace StudentManagement.Services
             await _repository.CreateAsync(student);
         }
 
-        public async Task CreateManyAsync(List<StudentCreateDto> dtos)
-        {
-            var students = new List<Student>();
-            foreach (var dto in dtos)
-            {
-                // Basic check, skip if invalid
-                if (string.IsNullOrWhiteSpace(dto.MaSV) || string.IsNullOrWhiteSpace(dto.HoTen)) continue;
-
-                var student = new Student
-                {
-                    MaSV = dto.MaSV,
-                    HoTen = dto.HoTen,
-                    Tuoi = dto.Tuoi,
-                    Phai = dto.Phai ?? "Nam",
-                    NamHoc = dto.NamHoc ?? "",
-                    Khoa = dto.Khoa ?? "",
-                    MaLop = dto.MaLop ?? "",
-                    Email = dto.Email ?? "",
-                    SDT = dto.SDT ?? "",
-                    NgoaiNgu = new List<Language>(),
-                    MonHoc = new List<Subject>()
-                };
-                students.Add(student);
-            }
-            if (students.Any())
-            {
-                await _repository.CreateManyAsync(students);
-            }
-        }
-
         public async Task UpdateBasicAsync(string masv, StudentUpdateDto dto)
         {
             if (dto.Tuoi.HasValue && dto.Tuoi.Value <= 0)

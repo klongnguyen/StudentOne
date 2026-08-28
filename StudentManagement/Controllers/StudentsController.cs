@@ -71,20 +71,6 @@ namespace StudentManagement.Controllers
             }
         }
 
-        [HttpPost("bulk")]
-        public async Task<IActionResult> CreateMany([FromBody] List<StudentCreateDto> dtos)
-        {
-            try
-            {
-                await _service.CreateManyAsync(dtos);
-                return Ok(new { message = "Import thành công" });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-        }
-
         [HttpPut("{masv}")]
         public async Task<IActionResult> UpdateBasic(string masv, [FromBody] StudentUpdateDto dto)
         {

@@ -66,10 +66,6 @@
                                 <button class="btn btn-secondary" onclick="app.exportExcel()">
                                     <i class="fa-solid fa-file-export"></i> Xuất Excel
                                 </button>
-                                <button class="btn btn-secondary" onclick="document.getElementById('importExcelInput').click()">
-                                    <i class="fa-solid fa-file-import"></i> Nhập Excel
-                                </button>
-                                <input type="file" id="importExcelInput" style="display: none;" accept=".xlsx, .xls" onchange="app.importExcel(event)">
                                 <button id="btnSearch" class="btn btn-primary" onclick="app.applyFilterAndSort()">Tìm kiếm</button>
                                 <button class="btn btn-primary" onclick="app.openForm()">
                                     <i class="fa-solid fa-plus"></i> Thêm Sinh viên
