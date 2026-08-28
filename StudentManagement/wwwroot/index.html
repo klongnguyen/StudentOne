@@ -63,6 +63,13 @@
                                 <button id="btnDeleteClass" class="btn" style="background-color: var(--danger-color); color: white;" onclick="app.deleteClass()" disabled>
                                     <i class="fa-solid fa-trash"></i> Xóa Lớp
                                 </button>
+                                <button class="btn btn-secondary" onclick="app.exportExcel()">
+                                    <i class="fa-solid fa-file-export"></i> Xuất Excel
+                                </button>
+                                <button class="btn btn-secondary" onclick="document.getElementById('importExcelInput').click()">
+                                    <i class="fa-solid fa-file-import"></i> Nhập Excel
+                                </button>
+                                <input type="file" id="importExcelInput" style="display: none;" accept=".xlsx, .xls" onchange="app.importExcel(event)">
                                 <button id="btnSearch" class="btn btn-primary" onclick="app.applyFilterAndSort()">Tìm kiếm</button>
                                 <button class="btn btn-primary" onclick="app.openForm()">
                                     <i class="fa-solid fa-plus"></i> Thêm Sinh viên
@@ -343,6 +350,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script src="/js/app.js?v=2"></script>
 </body>
 </html>

@@ -47,6 +47,22 @@ namespace StudentManagement.Repositories
             }
         }
 
+        public async Task CreateManyAsync(IEnumerable<Student> students)
+        {
+            try
+            {
+                var options = new InsertManyOptions { IsOrdered = false };
+                await _students.InsertManyAsync(students, options);
+            }
+            catch (MongoBulkWriteException ex)
+            {
+                // IsOrdered = false ensures that if some documents fail (e.g. duplicate key), 
+                // the rest are still inserted. We catch the exception to prevent the API from crashing,
+                // and we could log it or return details if needed.
+                Console.WriteLine("Bulk insert had some duplicate keys. Some students were skipped.");
+            }
+        }
+
         public async Task UpdateBasicAsync(string masv, StudentUpdateDto updateDto)
         {
             var filter = Builders<Student>.Filter.Eq(s => s.MaSV, masv);

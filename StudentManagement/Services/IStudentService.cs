@@ -10,6 +10,7 @@ namespace StudentManagement.Services
         Task<List<Student>> GetAllAsync(string? malop = null);
         Task<Student> GetByMaSVAsync(string masv);
         Task CreateAsync(StudentCreateDto dto);
+        Task CreateManyAsync(List<StudentCreateDto> dtos);
         Task UpdateBasicAsync(string masv, StudentUpdateDto dto);
         Task DeleteByMaSVAsync(string masv);
         Task<long> DeleteByMaLopAsync(string malop);
