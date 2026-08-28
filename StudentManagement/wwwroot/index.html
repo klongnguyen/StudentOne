@@ -47,23 +47,27 @@
                 <div id="studentsView" class="card table-card">
                     <div class="card-header">
                         <h3>Danh sách Sinh viên</h3>
-                        <div class="header-actions" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-                            <div class="search-options" style="display: flex; gap: 8px;">
-                                <select id="filterClass" style="padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; min-width: 120px;">
-                                    <option value="all">Tất cả Lớp</option>
-                                </select>
+                        <div class="header-actions" style="display: flex; flex-direction: column; gap: 12px; align-items: flex-end;">
+                            <div class="search-row" style="display: flex; gap: 8px;">
+                                <div class="search-options">
+                                    <select id="filterClass" style="padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; min-width: 120px;">
+                                        <option value="all">Tất cả Lớp</option>
+                                    </select>
+                                </div>
+                                <div class="search-box">
+                                    <i class="fa-solid fa-search"></i>
+                                    <input type="text" id="searchInput" placeholder="Tìm theo Mã SV hoặc Tên...">
+                                </div>
                             </div>
-                            <div class="search-box">
-                                <i class="fa-solid fa-search"></i>
-                                <input type="text" id="searchInput" placeholder="Tìm theo Mã SV hoặc Tên...">
+                            <div class="button-row" style="display: flex; gap: 8px;">
+                                <button id="btnDeleteClass" class="btn" style="background-color: var(--danger-color); color: white;" onclick="app.deleteClass()" disabled>
+                                    <i class="fa-solid fa-trash"></i> Xóa Lớp
+                                </button>
+                                <button id="btnSearch" class="btn btn-primary" onclick="app.applyFilterAndSort()">Tìm kiếm</button>
+                                <button class="btn btn-primary" onclick="app.openForm()">
+                                    <i class="fa-solid fa-plus"></i> Thêm Sinh viên
+                                </button>
                             </div>
-                            <button id="btnSearch" class="btn btn-primary" onclick="app.applyFilterAndSort()">Tìm kiếm</button>
-                            <button id="btnDeleteClass" class="btn" style="background-color: var(--danger-color); color: white; display: none;" onclick="app.deleteClass()">
-                                <i class="fa-solid fa-trash"></i> Xóa Lớp
-                            </button>
-                            <button class="btn btn-primary" onclick="app.openForm()">
-                                <i class="fa-solid fa-plus"></i> Thêm Sinh viên
-                            </button>
                         </div>
                     </div>
                     
@@ -211,18 +215,10 @@
                             <label>Họ Tên <span class="required">*</span></label>
                             <input type="text" id="hoten" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group autocomplete-wrapper">
                             <label>Lớp <span class="required">*</span></label>
-                            <select id="malop" required>
-                                <option value="" disabled selected>-- Chọn lớp --</option>
-                                <option value="14DHTH01">14DHTH01</option>
-                                <option value="14DHTH02">14DHTH02</option>
-                                <option value="14DHTH03">14DHTH03</option>
-                                <option value="14DHTM01">14DHTM01</option>
-                                <option value="15DHTH01">15DHTH01</option>
-                                <option value="15DHTH02">15DHTH02</option>
-                                <option value="15DHTM01">15DHTM01</option>
-                            </select>
+                            <input type="text" id="malop" autocomplete="off" placeholder="Nhập hoặc chọn lớp..." required>
+                            <ul class="autocomplete-list" id="classListDropdown"></ul>
                         </div>
                         <div class="form-group">
                             <label>Phái</label>

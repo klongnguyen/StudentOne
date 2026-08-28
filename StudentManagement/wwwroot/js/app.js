@@ -116,6 +116,14 @@ const app = {
                 classSelect.value = currentSelectedClass;
             }
             
+            // Setup custom autocomplete cho form thêm/sửa Lớp
+            const sortedClasses = Array.from(classSet).sort();
+            const malopInput = document.getElementById('malop');
+            const classListDropdown = document.getElementById('classListDropdown');
+            if (malopInput && classListDropdown) {
+                app.setupCustomAutocomplete(malopInput, classListDropdown, sortedClasses);
+            }
+            
             this.applyFilterAndSort();
         } catch (error) {
             Swal.fire('Lỗi', 'Không thể kết nối đến máy chủ API.', 'error');
@@ -244,7 +252,7 @@ const app = {
         const btnDeleteClass = document.getElementById('btnDeleteClass');
 
         if (btnDeleteClass) {
-            btnDeleteClass.style.display = (filterClass !== 'all') ? 'inline-block' : 'none';
+            btnDeleteClass.disabled = (filterClass === 'all');
         }
 
         // 1. Lọc (Filter)
@@ -258,7 +266,6 @@ const app = {
                 const nameParts = this.extractNameParts(s.hoTen);
                 const svTen = nameParts.firstName.toLowerCase();
                 
-                // includes() bản chất đã hỗ trợ cả tuyệt đối (khi gõ full) và tương đối (gõ 1 phần)
                 if (!svMasv.includes(searchTerm) && !svTen.includes(searchTerm)) {
                     return false;
                 }
