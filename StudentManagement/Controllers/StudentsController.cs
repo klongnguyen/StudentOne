@@ -25,6 +25,20 @@ namespace StudentManagement.Controllers
             return Ok(students);
         }
 
+        [HttpGet("subjects")]
+        public async Task<IActionResult> GetSubjects()
+        {
+            var subjects = await _service.GetAllUniqueSubjectsAsync();
+            return Ok(subjects);
+        }
+
+        [HttpGet("languages")]
+        public async Task<IActionResult> GetLanguages()
+        {
+            var languages = await _service.GetAllUniqueLanguagesAsync();
+            return Ok(languages);
+        }
+
         [HttpGet("{masv}")]
         public async Task<IActionResult> GetByMaSV(string masv)
         {

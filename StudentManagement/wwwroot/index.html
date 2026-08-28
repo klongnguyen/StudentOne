@@ -52,16 +52,15 @@
                                 <select id="filterClass" style="padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; min-width: 120px;">
                                     <option value="all">Tất cả Lớp</option>
                                 </select>
-                                <select id="filterGender" style="padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; min-width: 120px;">
-                                    <option value="all">Tất cả Giới tính</option>
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-                                </select>
                             </div>
                             <div class="search-box">
                                 <i class="fa-solid fa-search"></i>
                                 <input type="text" id="searchInput" placeholder="Tìm theo Mã SV hoặc Tên...">
                             </div>
+                            <button id="btnSearch" class="btn btn-primary" onclick="app.applyFilterAndSort()">Tìm kiếm</button>
+                            <button id="btnDeleteClass" class="btn" style="background-color: var(--danger-color); color: white; display: none;" onclick="app.deleteClass()">
+                                <i class="fa-solid fa-trash"></i> Xóa Lớp
+                            </button>
                             <button class="btn btn-primary" onclick="app.openForm()">
                                 <i class="fa-solid fa-plus"></i> Thêm Sinh viên
                             </button>
@@ -214,7 +213,16 @@
                         </div>
                         <div class="form-group">
                             <label>Lớp <span class="required">*</span></label>
-                            <input type="text" id="malop" required>
+                            <select id="malop" required>
+                                <option value="" disabled selected>-- Chọn lớp --</option>
+                                <option value="14DHTH01">14DHTH01</option>
+                                <option value="14DHTH02">14DHTH02</option>
+                                <option value="14DHTH03">14DHTH03</option>
+                                <option value="14DHTM01">14DHTM01</option>
+                                <option value="15DHTH01">15DHTH01</option>
+                                <option value="15DHTH02">15DHTH02</option>
+                                <option value="15DHTM01">15DHTM01</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Phái</label>
@@ -224,20 +232,27 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Tuổi</label>
-                            <input type="number" id="tuoi" min="1">
+                            <label>Tuổi <span class="required">*</span></label>
+                            <input type="number" id="tuoi" min="1" required>
                         </div>
                         <div class="form-group">
                             <label>Khoa</label>
-                            <input type="text" id="khoa">
+                            <select id="khoa">
+                                <option value="" disabled selected>-- Chọn khoa --</option>
+                                <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Năm học</label>
-                            <input type="text" id="namhoc">
+                            <select id="namhoc">
+                                <option value="" disabled selected>-- Chọn năm học --</option>
+                                <option value="2023 - 2027">2023 - 2027</option>
+                                <option value="2024 - 2028">2024 - 2028</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" id="email">
+                            <input type="email" id="email" pattern="^[a-zA-Z0-9._%+\-]+@gmail\.com$" title="Vui lòng nhập định dạng @gmail.com hợp lệ (VD: ten.cua.ban@gmail.com)">
                         </div>
                         <div class="form-group">
                             <label>Số điện thoại</label>
@@ -305,6 +320,6 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js?v=2"></script>
 </body>
 </html>

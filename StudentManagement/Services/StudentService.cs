@@ -258,5 +258,15 @@ namespace StudentManagement.Services
                 throw new ValidationException($"Điểm {score} không hợp lệ. Điểm phải nằm trong khoảng [0.0, 10.0].");
             }
         }
+
+        public async Task<List<Subject>> GetAllUniqueSubjectsAsync()
+        {
+            return await _repository.GetAllUniqueSubjectsAsync();
+        }
+
+        public async Task<List<string>> GetAllUniqueLanguagesAsync()
+        {
+            return await _repository.GetAllUniqueLanguagesAsync();
+        }
     }
 }

@@ -23,5 +23,8 @@ namespace StudentManagement.Services
         Task<List<LanguageStatisticDto>> GetLanguageStatisticsAsync();
         Task<List<AcademicClassificationDto>> GetAcademicClassificationsAsync();
         Task<List<StudentGpaDto>> GetStudentGpasAsync();
+        
+        Task<List<Subject>> GetAllUniqueSubjectsAsync();
+        Task<List<string>> GetAllUniqueLanguagesAsync();
     }
 }

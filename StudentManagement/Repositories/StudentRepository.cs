@@ -361,5 +361,48 @@ namespace StudentManagement.Repositories
             var aggregate = await _students.AggregateAsync<StudentGpaDto>(pipeline);
             return await aggregate.ToListAsync();
         }
+
+        public async Task<List<Subject>> GetAllUniqueSubjectsAsync()
+        {
+            var pipeline = new BsonDocument[]
+            {
+                new BsonDocument("$unwind", "$monhoc"),
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", "$monhoc.mamon" },
+                    { "tenmon", new BsonDocument("$first", "$monhoc.tenmon") },
+                    { "stc", new BsonDocument("$first", "$monhoc.stc") }
+                }),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "_id", 0 },
+                    { "mamon", "$_id" },
+                    { "tenmon", 1 },
+                    { "stc", 1 }
+                }),
+                new BsonDocument("$sort", new BsonDocument("tenmon", 1))
+            };
+
+            var aggregate = await _students.AggregateAsync<Subject>(pipeline);
+            return await aggregate.ToListAsync();
+        }
+
+        public async Task<List<string>> GetAllUniqueLanguagesAsync()
+        {
+            var pipeline = new BsonDocument[]
+            {
+                new BsonDocument("$unwind", "$ngoaingu"),
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", "$ngoaingu.tenNgoaiNgu" }
+                }),
+                new BsonDocument("$sort", new BsonDocument("_id", 1))
+            };
+
+            var aggregate = await _students.AggregateAsync<BsonDocument>(pipeline);
+            var results = await aggregate.ToListAsync();
+            
+            return results.Select(doc => doc["_id"].AsString).ToList();
+        }
     }
 }

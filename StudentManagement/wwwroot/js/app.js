@@ -6,6 +6,8 @@ let classificationChartInstance = null;
 const app = {
     allStudents: [],
     students: [],
+    uniqueSubjects: [],
+    uniqueLanguages: [],
     isEditMode: false,
     currentSortCol: '',
     isAscending: true,
@@ -16,6 +18,8 @@ const app = {
         this.loadStudents();
         this.setupSearch();
         this.loadStats();
+        this.loadUniqueSubjects();
+        this.loadUniqueLanguages();
     },
 
     switchTab: function(tabName) {
@@ -41,6 +45,42 @@ const app = {
     // ----------------------------------------------------
     // Lấy dữ liệu và vẽ bảng
     // ----------------------------------------------------
+    loadUniqueSubjects: async function() {
+        try {
+            const res = await fetch(`${API_URL}/subjects`);
+            if (!res.ok) throw new Error('Failed to fetch subjects');
+            this.uniqueSubjects = await res.json();
+            
+            const dataList = document.getElementById('subjectList');
+            if (dataList) {
+                dataList.innerHTML = '';
+                this.uniqueSubjects.forEach(sub => {
+                    dataList.innerHTML += `<option value="${sub.maMon}">${sub.tenMon}</option>`;
+                });
+            }
+        } catch (error) {
+            console.error('Lỗi khi tải danh sách môn học:', error);
+        }
+    },
+
+    loadUniqueLanguages: async function() {
+        try {
+            const res = await fetch(`${API_URL}/languages`);
+            if (!res.ok) throw new Error('Failed to fetch languages');
+            this.uniqueLanguages = await res.json();
+            
+            const dataList = document.getElementById('languageList');
+            if (dataList) {
+                dataList.innerHTML = '';
+                this.uniqueLanguages.forEach(lang => {
+                    dataList.innerHTML += `<option value="${lang}">${lang}</option>`;
+                });
+            }
+        } catch (error) {
+            console.error('Lỗi khi tải danh sách ngoại ngữ:', error);
+        }
+    },
+
     loadStudents: async function(malop = '') {
         try {
             const url = malop ? `${API_URL}?malop=${malop}` : API_URL;
@@ -151,9 +191,18 @@ const app = {
     },
 
     setupSearch: function() {
-        document.getElementById('searchInput').addEventListener('input', () => this.applyFilterAndSort());
+        const searchInput = document.getElementById('searchInput');
+        
+        // Listen for Enter key on search input
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                this.applyFilterAndSort();
+            }
+        });
+        
+        // Keep class filter real-time or maybe just let button do it. 
+        // We'll let button and select trigger it.
         document.getElementById('filterClass').addEventListener('change', () => this.applyFilterAndSort());
-        document.getElementById('filterGender').addEventListener('change', () => this.applyFilterAndSort());
     },
 
     extractNameParts: function(fullName) {
@@ -192,13 +241,16 @@ const app = {
     applyFilterAndSort: function() {
         const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
         const filterClass = document.getElementById('filterClass').value;
-        const filterGender = document.getElementById('filterGender').value;
+        const btnDeleteClass = document.getElementById('btnDeleteClass');
+
+        if (btnDeleteClass) {
+            btnDeleteClass.style.display = (filterClass !== 'all') ? 'inline-block' : 'none';
+        }
 
         // 1. Lọc (Filter)
         this.students = this.allStudents.filter(s => {
-            // Lọc theo Lớp và Phái (Dropdown)
+            // Lọc theo Lớp (Dropdown)
             if (filterClass !== 'all' && s.maLop !== filterClass) return false;
-            if (filterGender !== 'all' && s.phai !== filterGender) return false;
 
             // Tìm kiếm tương đối / tuyệt đối theo Mã SV hoặc Tên (Textbox)
             if (searchTerm) {
@@ -262,6 +314,40 @@ const app = {
         this.renderTable();
     },
 
+    deleteClass: function() {
+        const filterClass = document.getElementById('filterClass').value;
+        if (filterClass === 'all') return;
+
+        Swal.fire({
+            title: `Xác nhận xóa lớp ${filterClass}?`,
+            text: `Bạn có chắc chắn muốn xóa TOÀN BỘ sinh viên thuộc lớp ${filterClass} không? Hành động này không thể hoàn tác!`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#ef4444',
+            cancelButtonColor: '#94a3b8',
+            confirmButtonText: 'Có, Xóa ngay!',
+            cancelButtonText: 'Hủy'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const res = await fetch(`${API_URL}/class/${filterClass}`, { method: 'DELETE' });
+                    if (!res.ok) throw new Error('Delete class failed');
+                    
+                    const resultData = await res.json();
+                    
+                    Swal.fire('Đã xóa!', resultData.message || `Đã xóa thành công lớp ${filterClass}.`, 'success');
+                    
+                    // Xóa thành công, chuyển dropdown về 'all' và load lại
+                    document.getElementById('filterClass').value = 'all';
+                    this.loadStudents();
+                } catch (error) {
+                    Swal.fire('Lỗi', 'Không thể xóa lớp này.', 'error');
+                    console.error(error);
+                }
+            }
+        });
+    },
+
     // ----------------------------------------------------
     // Modal Form Logic
     // ----------------------------------------------------
@@ -323,11 +409,15 @@ const app = {
         const container = document.getElementById('languagesContainer');
         const div = document.createElement('div');
         div.className = 'dynamic-row lang-row';
+        
+        const langVal = data.tenNgoaiNgu || '';
+
         div.innerHTML = `
             <div class="row-top">
-                <div class="form-group">
+                <div class="form-group autocomplete-wrapper">
                     <label>Ngoại ngữ</label>
-                    <input type="text" class="l-ten" value="${data.tenNgoaiNgu || ''}" required>
+                    <input type="text" class="l-ten" value="${langVal}" autocomplete="off" required>
+                    <ul class="autocomplete-list"></ul>
                 </div>
                 <div class="form-group">
                     <label>Trình độ</label>
@@ -347,6 +437,11 @@ const app = {
             </div>
         `;
         container.appendChild(div);
+
+        // Setup custom autocomplete
+        const input = div.querySelector('.l-ten');
+        const list = div.querySelector('.autocomplete-list');
+        app.setupCustomAutocomplete(input, list, app.uniqueLanguages);
     },
 
     addSubjectRow: function(data = {}) {
@@ -362,9 +457,10 @@ const app = {
         }
         
         div.innerHTML = `
-            <div class="form-group">
+            <div class="form-group autocomplete-wrapper">
                 <label>Mã môn</label>
-                <input type="text" class="s-ma" value="${data.maMon || ''}" required>
+                <input type="text" class="s-ma" value="${data.maMon || ''}" autocomplete="off" required>
+                <ul class="autocomplete-list"></ul>
             </div>
             <div class="form-group">
                 <label>Tên môn</label>
@@ -382,6 +478,21 @@ const app = {
                 <i class="fa-solid fa-trash"></i>
             </button>
         `;
+        
+        const maInput = div.querySelector('.s-ma');
+        const tenInput = div.querySelector('.s-ten');
+        const stcInput = div.querySelector('.s-stc');
+        const list = div.querySelector('.autocomplete-list');
+        
+        if (maInput && tenInput && list) {
+            app.setupCustomAutocomplete(maInput, list, app.uniqueSubjects, (selectedSubject) => {
+                tenInput.value = selectedSubject.tenMon;
+                if (stcInput && selectedSubject.stc) {
+                    stcInput.value = selectedSubject.stc;
+                }
+            });
+        }
+        
         container.appendChild(div);
     },
 
@@ -423,15 +534,31 @@ const app = {
             });
         });
 
-        // Thu thập mảng Môn học
+        // Thu thập mảng Môn học và kiểm tra trùng lặp mã môn
+        let hasDuplicateSubject = false;
+        const subjectCodes = new Set();
+
         document.querySelectorAll('.subject-row').forEach(row => {
+            const maMon = row.querySelector('.s-ma').value.trim();
+            if (maMon) {
+                if (subjectCodes.has(maMon)) {
+                    hasDuplicateSubject = true;
+                }
+                subjectCodes.add(maMon);
+            }
+            
             dto.monHoc.push({
-                maMon: row.querySelector('.s-ma').value.trim(),
+                maMon: maMon,
                 tenMon: row.querySelector('.s-ten').value.trim(),
                 stc: parseInt(row.querySelector('.s-stc').value) || 0,
                 diem: parseFloat(row.querySelector('.s-diem').value) || 0
             });
         });
+
+        if (hasDuplicateSubject) {
+            Swal.fire('Lỗi trùng lặp', 'Một sinh viên không thể có 2 môn học trùng mã (Mã môn bị lặp lại).', 'error');
+            return;
+        }
 
         try {
             let res;
@@ -696,6 +823,85 @@ const app = {
                     }
                 });
             });
+    },
+
+    setupCustomAutocomplete: function(input, list, dataArray, onSelectCallback = null) {
+        let currentFocus = -1;
+
+        const renderList = (filterText) => {
+            list.innerHTML = '';
+            let count = 0;
+            const filterLower = filterText.toLowerCase();
+
+            for (let i = 0; i < dataArray.length; i++) {
+                const item = dataArray[i];
+                const text = typeof item === 'string' ? item : item.maMon; // Handle language strings and subject objects
+
+                if (!filterText || text.toLowerCase().includes(filterLower)) {
+                    const li = document.createElement('li');
+                    li.textContent = text;
+                    li.addEventListener('click', function(e) {
+                        e.stopPropagation(); // prevent document click from firing immediately
+                        input.value = text;
+                        list.style.display = 'none';
+                        if (onSelectCallback) onSelectCallback(item);
+                    });
+                    list.appendChild(li);
+                    count++;
+                }
+            }
+            if (count > 0) {
+                list.style.display = 'block';
+            } else {
+                list.style.display = 'none';
+            }
+        };
+
+        input.addEventListener('input', function() {
+            currentFocus = -1;
+            renderList(this.value);
+        });
+
+        input.addEventListener('focus', function() {
+            renderList(this.value);
+        });
+
+        input.addEventListener('keydown', function(e) {
+            let items = list.getElementsByTagName('li');
+            if (e.keyCode == 40) { // DOWN
+                currentFocus++;
+                addActive(items);
+            } else if (e.keyCode == 38) { // UP
+                currentFocus--;
+                addActive(items);
+            } else if (e.keyCode == 13) { // ENTER
+                e.preventDefault();
+                if (currentFocus > -1 && items.length > 0) {
+                    items[currentFocus].click();
+                }
+            }
+        });
+
+        function addActive(items) {
+            if (!items || items.length === 0) return;
+            removeActive(items);
+            if (currentFocus >= items.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (items.length - 1);
+            items[currentFocus].style.backgroundColor = '#e2e8f0';
+        }
+
+        function removeActive(items) {
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.backgroundColor = '';
+            }
+        }
+
+        // Close list when clicking outside
+        document.addEventListener('click', function (e) {
+            if (e.target !== input && e.target !== list) {
+                list.style.display = 'none';
+            }
+        });
     }
 };
 
